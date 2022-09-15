@@ -9,21 +9,28 @@
                             src="{{ asset('admin/demo/app') }}/assets/images/logo/logo-dark.png" width="200">
                         <h2 class="m-b-0">Sign In</h2>
                     </div>
-                    <form>
+                    <form action="{{ route('login.post') }}" method="POST">
+                        @csrf
                         <div class="form-group">
-                            <label class="font-weight-semibold" for="userName">Username:</label>
+                            <label class="font-weight-semibold" for="userName">Email:</label>
                             <div class="input-affix">
                                 <i class="prefix-icon anticon anticon-user"></i>
-                                <input type="text" class="form-control" id="userName" placeholder="Username">
+                                <input type="text" class="form-control" name="email" placeholder="Email">
                             </div>
+                            @error('email')
+                            <span class="badge text-bg-warning">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="font-weight-semibold" for="password">Password:</label>
                             <a class="float-right font-size-13 text-muted" href="">Lupa password?</a>
                             <div class="input-affix m-b-10">
                                 <i class="prefix-icon anticon anticon-lock"></i>
-                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
+                            @error('password')
+                            <span class="badge text-bg-warning">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <div class="d-flex align-items-center justify-content-between">
@@ -31,7 +38,7 @@
                                     Belum punya akun?
                                     <a class="small" href=""> Daftar</a>
                                 </span>
-                                <button class="btn btn-primary">Masuk</button>
+                                <button type="submit" class="btn btn-primary">Masuk</button>
                             </div>
                         </div>
                     </form>

@@ -22,10 +22,15 @@ Route::get('/', function () {
 
 //Authentication
 Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login/post', [AuthController::class, 'login_post'])->name('login.post');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 
-//Dashboard
-Route::get('/dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
 
-//Data Kost
-Route::get('/dashboard/data-kost', [DataKostController::class, 'index'])->name('datakost.index');
+Route::group(['middleware' => ['auth', 'checkRole:admin']], function(){
+
+    //Dashboard
+    Route::get('/dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
+
+    //Data Kost
+    Route::get('/dashboard/data-kost', [DataKostController::class, 'index'])->name('datakost.index');
+});

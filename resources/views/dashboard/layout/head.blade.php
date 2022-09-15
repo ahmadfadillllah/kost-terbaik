@@ -14,8 +14,29 @@
     <!-- Core css -->
     <link href="{{ asset('admin/demo/app') }}/assets/css/app.min.css" rel="stylesheet">
 
+    {{-- SweetAlert2 --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
+    @if (session('info'))
+        <script>
+            Swal.fire(
+            'Upps!',
+            '{{ session('info') }}',
+            'info'
+            )
+        </script>
+    @endif
+    @if (session('success'))
+        <script>
+            Swal.fire(
+            'Good!',
+            '{{ session('success') }}',
+            'success'
+            )
+        </script>
+    @endif
     <div class="app">
         <div class="layout">
