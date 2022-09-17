@@ -1,10 +1,5 @@
 <div class="d-none d-md-flex p-h-40 justify-content-between">
     <span class="">© 2022 Penentuan Kost Terbaik</span>
-    <ul class="list-inline">
-        <li class="list-inline-item">
-            Create by <a class="text-dark text-link" href="https://adhyy.my.id" target="_blank">Adhyy</a>
-        </li>
-    </ul>
 </div>
 </div>
 </div>

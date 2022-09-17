@@ -53,41 +53,8 @@
                                         <i class="anticon anticon-mail"></i>
                                     </div>
                                     <div class="m-l-15">
-                                        <p class="m-b-0 text-dark">You received a new message</p>
-                                        <p class="m-b-0"><small>8 min ago</small></p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="javascript:void(0);" class="dropdown-item d-block p-15 border-bottom">
-                                <div class="d-flex">
-                                    <div class="avatar avatar-cyan avatar-icon">
-                                        <i class="anticon anticon-user-add"></i>
-                                    </div>
-                                    <div class="m-l-15">
-                                        <p class="m-b-0 text-dark">New user registered</p>
-                                        <p class="m-b-0"><small>7 hours ago</small></p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="javascript:void(0);" class="dropdown-item d-block p-15 border-bottom">
-                                <div class="d-flex">
-                                    <div class="avatar avatar-red avatar-icon">
-                                        <i class="anticon anticon-user-add"></i>
-                                    </div>
-                                    <div class="m-l-15">
-                                        <p class="m-b-0 text-dark">System Alert</p>
-                                        <p class="m-b-0"><small>8 hours ago</small></p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="javascript:void(0);" class="dropdown-item d-block p-15 ">
-                                <div class="d-flex">
-                                    <div class="avatar avatar-gold avatar-icon">
-                                        <i class="anticon anticon-user-add"></i>
-                                    </div>
-                                    <div class="m-l-15">
-                                        <p class="m-b-0 text-dark">You have a new update</p>
-                                        <p class="m-b-0"><small>2 days ago</small></p>
+                                        <p class="m-b-0 text-dark">Selamat datang</p>
+                                        <p class="m-b-0"><small>2022</small></p>
                                     </div>
                                 </div>
                             </a>
@@ -98,22 +65,22 @@
             <li class="dropdown dropdown-animated scale-left">
                 <div class="pointer" data-toggle="dropdown">
                     <div class="avatar avatar-image  m-h-10 m-r-15">
-                        <img src="{{ asset('admin/demo/app') }}/assets/images/avatars/thumb-3.jpg"  alt="">
+                        <img src="{{ asset('admin/demo/app/images') }}/{{ Auth::user()->avatar }}"  alt="">
                     </div>
                 </div>
                 <div class="p-b-15 p-t-20 dropdown-menu pop-profile">
                     <div class="p-h-20 p-b-15 m-b-10 border-bottom">
                         <div class="d-flex m-r-50">
                             <div class="avatar avatar-lg avatar-image">
-                                <img src="{{ asset('admin/demo/app') }}/assets/images/avatars/thumb-3.jpg" alt="">
+                                <img src="{{ asset('admin/demo/app/images') }}/{{ Auth::user()->avatar }}" alt="">
                             </div>
                             <div class="m-l-10">
-                                <p class="m-b-0 text-dark font-weight-semibold">Ahmad Fadillah</p>
-                                <p class="m-b-0 opacity-07">Administrator</p>
+                                <p class="m-b-0 text-dark font-weight-semibold">{{ Auth::user()->name }}</p>
+                                <p class="m-b-0 opacity-07">{{ Auth::user()->role }}</p>
                             </div>
                         </div>
                     </div>
-                    <a href="javascript:void(0);" class="dropdown-item d-block p-h-15 p-v-10">
+                    <a href="{{ route('profile.index') }}" class="dropdown-item d-block p-h-15 p-v-10">
                         <div class="d-flex align-items-center justify-content-between">
                             <div>
                                 <i class="anticon opacity-04 font-size-16 anticon-user"></i>
@@ -122,7 +89,7 @@
                             <i class="anticon font-size-10 anticon-right"></i>
                         </div>
                     </a>
-                    <a href="javascript:void(0);" class="dropdown-item d-block p-h-15 p-v-10">
+                    <a href="{{ route('logout') }}" class="dropdown-item d-block p-h-15 p-v-10">
                         <div class="d-flex align-items-center justify-content-between">
                             <div>
                                 <i class="anticon opacity-04 font-size-16 anticon-logout"></i>

@@ -7,9 +7,9 @@
                     <div class="d-flex align-items-center justify-content-between m-b-30">
                         <img class="img-fluid" alt=""
                             src="{{ asset('admin/demo/app') }}/assets/images/logo/logo-dark.png" width="200">
-                        <h2 class="m-b-0">Sign In</h2>
+                        <h2 class="m-b-0">Forgot</h2>
                     </div>
-                    <form action="{{ route('login.post') }}" method="POST">
+                    <form action="#" method="POST">
                         @csrf
                         <div class="form-group">
                             <label class="font-weight-semibold" for="userName">Email:</label>
@@ -22,23 +22,12 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label class="font-weight-semibold" for="password">Password:</label>
-                            <a class="float-right font-size-13 text-muted" href="{{ route('forgotpassword') }}">Lupa password?</a>
-                            <div class="input-affix m-b-10">
-                                <i class="prefix-icon anticon anticon-lock"></i>
-                                <input type="password" class="form-control" name="password" placeholder="Password">
-                            </div>
-                            @error('password')
-                            <span class="badge text-bg-warning">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
                             <div class="d-flex align-items-center justify-content-between">
                                 <span class="font-size-13 text-muted">
-                                    Belum punya akun?
-                                    <a class="small" href="{{ route('register') }}"> Daftar</a>
+                                    Sudah punya akun?
+                                    <a class="small" href="{{ route('login') }}"> Login</a>
                                 </span>
-                                <button type="submit" class="btn btn-primary">Masuk</button>
+                                <button type="submit" class="btn btn-primary">Kirim ke Email</button>
                             </div>
                         </div>
                     </form>

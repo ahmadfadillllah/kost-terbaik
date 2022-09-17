@@ -2,9 +2,6 @@
                 <footer class="footer">
                     <div class="footer-content">
                         <p class="m-b-0">Copyright © 2022 Penentuan Kost Terbaik. All rights reserved.</p>
-                        <span>
-                            <a href="https://adhyy.my.id" class="text-gray m-r-15" target="_blank">Create by Adhyy</a>
-                        </span>
                     </div>
                 </footer>
                 <!-- Footer END -->
@@ -78,6 +75,7 @@
     <script src="{{ asset('admin/demo/app') }}/assets/js/vendors.min.js"></script>
 
     <!-- page js -->
+    <script src="{{ asset('admin/demo/app') }}/assets/vendors/select2/select2.min.js"></script>
     <script src="{{ asset('admin/demo/app') }}/assets/vendors/chartjs/Chart.min.js"></script>
     <script src="{{ asset('admin/demo/app') }}/assets/js/pages/dashboard-default.js"></script>
 

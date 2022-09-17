@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="{{ asset('admin/demo/app') }}/assets/images/logo/favicon.png">
 
     <!-- page css -->
+    <link href="{{ asset('admin/demo/app') }}/assets/vendors/select2/select2.css" rel="stylesheet">
 
     <!-- Core css -->
     <link href="{{ asset('admin/demo/app') }}/assets/css/app.min.css" rel="stylesheet">

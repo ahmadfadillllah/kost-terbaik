@@ -5,34 +5,42 @@
             <div class="card shadow-lg">
                 <div class="card-body">
                     <div class="d-flex align-items-center justify-content-between m-b-30">
-                        <img class="img-fluid" alt="" src="{{ asset('admin/demo/app') }}/assets/images/logo/logo-dark.png" width="200">
+                        <img class="img-fluid" alt=""
+                            src="{{ asset('admin/demo/app') }}/assets/images/logo/logo-dark.png" width="200">
                         <h2 class="m-b-0">Sign Up</h2>
                     </div>
-                    <form>
+                    @include('auth.validation.register_error')
+                    <form action="{{ route('register.post') }}" method="POST">
+                        @csrf
                         <div class="form-group">
-                            <label class="font-weight-semibold" for="userName">Username:</label>
-                            <input type="text" class="form-control" id="userName" placeholder="Username">
+                            <label class="font-weight-semibold" for="userName">Name:</label>
+                            <input type="text" class="form-control" name="name" placeholder="Nama Lengkap">
                         </div>
                         <div class="form-group">
                             <label class="font-weight-semibold" for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
+                            <input type="email" class="form-control" name="email" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label class="font-weight-semibold" for="password">Password:</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
                         <div class="form-group">
                             <label class="font-weight-semibold" for="confirmPassword">Confirm Password:</label>
-                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                            <input type="password" class="form-control" name="password_confirmation"
+                                placeholder="Confirm Password">
                         </div>
                         <div class="form-group">
                             <div class="d-flex align-items-center justify-content-between p-t-15">
                                 <div class="checkbox">
-                                    <input id="checkbox" type="checkbox" required>
+                                    <input id="checkbox" name="checkbox" type="checkbox" required>
                                     <label for="checkbox"><span>I have read the <a href="">agreement</a></span></label>
                                 </div>
-                                <button class="btn btn-primary">Daftar</button>
+                                <button type="submit" class="btn btn-primary">Daftar</button>
                             </div>
+                            <span class="font-size-13 text-muted">
+                                Sudah punya akun?
+                                <a class="small" href="{{ route('login') }}"> Login</a>
+                            </span>
                         </div>
                     </form>
                 </div>
