@@ -48,13 +48,13 @@
                         <a href="#home" class="nav-link" id="scrollElement">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
+                        <a href="#about" class="nav-link">Tenang</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="#contact" class="nav-link">Kontak</a>
                     </li>
                 </ul>
-                <a href="#" class="btn btn-info btn-sm navbar-btn my-lg-0 my-2">Try it Free</a>
+                <a href="{{ route('login') }}" class="btn btn-info btn-sm navbar-btn my-lg-0 my-2">Login</a>
             </div>
         </div>
     </nav>
@@ -68,7 +68,7 @@
                 <div class="col-lg-8">
                     <div class="hero-3-content text-center py-5 px-4 mt-4">
                         <span class="con-border-top"></span>
-                        <h6 class="text-white text-uppercase mt-3 mb-2">- what we do</h6>
+                        <h6 class="text-white text-uppercase mt-3 mb-2">- tentang kami</h6>
                         <h1 class="hero-3-title text-white mb-lg-3 mb-2">Penentuan Kost Terbaik</h1>
                         <p class="mb-4 text-white-50">Sistem pendukung keputusan penentuan kost terbaik menggunakan metode <br><i>Analytical Hierarchy Process</i></p>
                         <a href="{{ route('dashboard.index') }}" class="btn btn-info">Info Selanjutnya<i class="mdi mdi-arrow-right ml-1"></i></a>
@@ -147,8 +147,8 @@
                     <div class="card contact-section-card mb-0">
                         <div class="card-body p-md-5">
                             <div class="text-center title mb-5">
-                                <p class="text-muted text-uppercase fw-normal mb-2">Contact</p>
-                                <h3 class="mb-3">Have any Questions ?</h3>
+                                <p class="text-muted text-uppercase fw-normal mb-2">Kontak</p>
+                                <h3 class="mb-3">Punya pertanyaan?</h3>
                                 <div class="title-icon position-relative">
                                     <div class="position-relative">
                                         <i class="uim uim-arrow-circle-down"></i>
@@ -162,13 +162,13 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="name">Name</label>
+                                            <label class="form-label" for="name">Nama</label>
                                             <input name="name" id="name" type="text" class="form-control" placeholder="Enter your name..." />
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="email">Email address</label>
+                                            <label class="form-label" for="email">Alamat email</label>
                                             <input name="email" id="email" type="email" class="form-control" placeholder="Enter your email..." />
                                         </div>
                                     </div>
@@ -181,12 +181,12 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label" for="comments">Message</label>
+                                    <label class="form-label" for="comments">Pesan</label>
                                     <textarea name="comments" id="comments" rows="3" class="form-control" placeholder="Enter your message..."></textarea>
                                 </div>
 
                                 <div class="text-right">
-                                    <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Send message" />
+                                    <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Kirim pesan" />
 
                                 </div>
                             </form>

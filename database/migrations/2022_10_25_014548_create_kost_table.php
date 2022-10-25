@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDatakostTable extends Migration
+class CreateKostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,20 @@ class CreateDatakostTable extends Migration
      */
     public function up()
     {
-        Schema::create('datakost', function (Blueprint $table) {
+        Schema::create('kost', function (Blueprint $table) {
             $table->id();
-            $table->string('gambar');
+            $table->integer('kodekost');
             $table->string('namakost');
-            $table->string('alamat');
-            $table->bigInteger('harga');
+            $table->string('gambar');
             $table->string('fasilitas');
-            $table->string('tipekost');
+            $table->bigInteger('hargasewa');
             $table->string('sistemkontrak');
+            $table->string('lokasi');
+            $table->string('kenyamanan');
+            $table->string('keamanan');
+            $table->string('luas_kamar');
+            $table->string('jarak_dari_kampus');
+            $table->string('desain_rumah');
             $table->timestamps();
         });
     }
@@ -33,6 +38,6 @@ class CreateDatakostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datakost');
+        Schema::dropIfExists('kost');
     }
 }

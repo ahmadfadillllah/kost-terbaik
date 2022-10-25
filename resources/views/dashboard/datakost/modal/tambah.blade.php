@@ -11,38 +11,103 @@
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
+                        <label for="formGroupExampleInput">Kode Kost</label>
+                        <input type="text" class="form-control" value="A1" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Nama Kost</label>
+                        <input type="text" class="form-control" name="nama_kost">
+                    </div>
+                    <div class="form-group">
                         <label for="formGroupExampleInput">Gambar</label>
                         <input type="file" class="form-control" name="gambar">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Nama Kost</label>
-                        <input type="text" class="form-control" name="namakost">
+                        <label for="formGroupExampleInput">Fasilitas</label>
+                        <select class="form-control" name="fasilitas" aria-label="Default select example">
+                            <option value="Tidak Lengkap" selected>Tidak Lengkap</option>
+                            <option value="Kurang Lengkap">Kurang Lengkap</option>
+                            <option value="Lengkap">Lengkap</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput">Alamat</label>
-                        <input type="text" class="form-control" name="alamat">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Harga</label>
-                        <input type="text" class="form-control" id="rupiah" name="harga">
+                        <label for="formGroupExampleInput">Harga Sewa</label>
+                        <select class="form-control" name="harga_sewa" aria-label="Default select example">
+                            <option value="Murah" selected>Murah</option>
+                            <option value="Sedang">Sedang</option>
+                            <option value="Mahal">Mahal</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Fasilitas</label>
-                        <input type="text" class="form-control" name="fasilitas">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Tipe Kost</label>
-                        <select class="form-control" name="tipekost" aria-label="Default select example">
-                            <option value="Menengah" selected>Menengah</option>
-                            <option value="Eksklusif">Eksklusif</option>
-                            <option value="Standard">Standard</option>
+                        <select class="form-control" name="fasilitas" aria-label="Default select example">
+                            <option value="Lengkap" selected>Lengkap</option>
+                            <option value="Kurang Lengkap">Kurang Lengkap</option>
+                            <option value="Tidak Lengkap">Tidak Lengkap</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Sistem Kontrak</label>
-                        <select class="form-control" name="sistemkontrak" aria-label="Default select example">
-                            <option value="Bulanan" selected>Bulanan</option>
-                            <option value="Tahunan">Tahunan</option>
+                        <select class="form-control" name="sistem_kontrak" aria-label="Default select example">
+                            <option value="Sangat Baik" selected>Sangat Baik</option>
+                            <option value="Baik">Baik</option>
+                            <option value="Cukup">Cukup</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Sistem Kontrak</label>
+                        <select class="form-control" name="sistem_kontrak" aria-label="Default select example">
+                            <option value="Sangat Baik" selected>Sangat Baik</option>
+                            <option value="Baik">Baik</option>
+                            <option value="Cukup">Cukup</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Lokasi</label>
+                        <select class="form-control" name="lokasi" aria-label="Default select example">
+                            <option value="Sangat Baik" selected>Sangat Baik</option>
+                            <option value="Baik">Baik</option>
+                            <option value="Cukup">Cukup</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Kenyamanan</label>
+                        <select class="form-control" name="kenyamanan" aria-label="Default select example">
+                            <option value="Sangat Baik" selected>Sangat Baik</option>
+                            <option value="Baik">Baik</option>
+                            <option value="Cukup">Cukup</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Keamanan</label>
+                        <select class="form-control" name="keamanan" aria-label="Default select example">
+                            <option value="Sangat Baik" selected>Sangat Baik</option>
+                            <option value="Baik">Baik</option>
+                            <option value="Cukup">Cukup</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Luas Kamar</label>
+                        <select class="form-control" name="luas_kamar" aria-label="Default select example">
+                            <option value="Sangat Baik" selected>Sangat Baik</option>
+                            <option value="Baik">Baik</option>
+                            <option value="Cukup">Cukup</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Jarak Dari Kampus</label>
+                        <select class="form-control" name="jarak_dari_kampus" aria-label="Default select example">
+                            <option value="Sangat Baik" selected>Sangat Baik</option>
+                            <option value="Baik">Baik</option>
+                            <option value="Cukup">Cukup</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Desain Rumah</label>
+                        <select class="form-control" name="desain_rumah" aria-label="Default select example">
+                            <option value="Sangat Baik" selected>Sangat Baik</option>
+                            <option value="Baik">Baik</option>
+                            <option value="Cukup">Cukup</option>
                         </select>
                     </div>
                 </div>
@@ -54,7 +119,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
+{{-- <script type="text/javascript">
 
     var rupiah = document.getElementById('rupiah');
     rupiah.addEventListener('keyup', function(e){
@@ -80,4 +145,4 @@
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
         return prefix == undefined ? rupiah : (rupiah ? 'Rp' + rupiah : '');
     }
-</script>
+</script> --}}

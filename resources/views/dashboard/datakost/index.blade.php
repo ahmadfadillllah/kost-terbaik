@@ -20,48 +20,18 @@
             @include('dashboard.datakost.modal.tambah')
             <h4>Data Kost</h4>
             <p>Ini adalah daftar kost yang telah ditambahkan.</p>
-            <div class="m-t-25">
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Gambar</th>
-                                <th scope="col">Nama Kost</th>
-                                <th scope="col">Alamat</th>
-                                <th scope="col">Harga</th>
-                                <th scope="col">Fasilitas</th>
-                                <th scope="col">Tipe Kost</th>
-                                <th scope="col">Sistem Kontrak</th>
-                                @if (Auth::user()->role == 'admin')
-                                    <th scope="col">Aksi</th>
-                                @endif
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($datakost as $dk)
-                            @include('dashboard.datakost.modal.edit')
-                                <tr>
-                                    <th scope="row">{{ $loop->iteration }}</th>
-                                    <td><img src="{{ asset('admin/demo/app/images') }}/{{ $dk->gambar }}" style="align-content: center" height="100"></td>
-                                    <td>{{ $dk->namakost }}</td>
-                                    <td>{{ $dk->alamat }}</td>
-                                    <td>@currency($dk->harga)</td>
-                                    <td>{{ $dk->fasilitas }}</td>
-                                    <td>{{ $dk->tipekost }}</td>
-                                    <td>{{ $dk->sistemkontrak }}</td>
-                                    @if (Auth::user()->role == 'admin')
-                                        <td>
-                                            <button type="button" class="btn btn-warning btn-tone m-r-5 btn-xs" data-toggle="modal" data-target="#editKost{{ $dk->id }}">
-                                                Ubah
-                                            </button>
-                                            <a href="{{ route('datakost.delete', $dk->id) }}" class="btn btn-danger btn-tone m-r-5 btn-xs" onClick="confirm('Yain ingin menghapus Kost tersebut?')">Hapus</a>
-                                        </td>
-                                    @endif
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <div class="card" style="max-width: 370px">
+                <img class="card-img-top" src="https://yuklegal.com/wp-content/uploads/2021/11/tips-Manajemen-Rumah-Kost-yang-Baik-dan-Benar-.jpg" alt="">
+                <div class="card-body">
+                    <h4 class="m-t-10">Card Title</h4>
+                    ...
+                    <div class="m-t-20">
+                        <a href="" class="btn btn-primary">Action 1</a>
+                    </div>
                 </div>
             </div>
         </div>

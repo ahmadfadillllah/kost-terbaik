@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKriteriaTable extends Migration
+class CreateKriteriapemilikkostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateKriteriaTable extends Migration
      */
     public function up()
     {
-        Schema::create('kriteria', function (Blueprint $table) {
+        Schema::create('kriteriapemilikkost', function (Blueprint $table) {
             $table->id();
-            $table->string('kode')->unique();
-            $table->string('namakriteria');
+            $table->unsignedBigInteger('id_kost');
+            $table->integer('kode');
+            $table->string('nama');
+            $table->integer('bobot');
             $table->timestamps();
+
+            $table->foreign('id_kost')->references('id')->on('kost');
         });
     }
 
@@ -28,6 +32,6 @@ class CreateKriteriaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kriteria');
+        Schema::dropIfExists('kriteriapemilikkost');
     }
 }

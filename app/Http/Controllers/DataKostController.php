@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataKost;
+use App\Models\Kost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -11,7 +12,7 @@ class DataKostController extends Controller
     //
     public function index()
     {
-        $datakost = DataKost::all();
+        $datakost = Kost::all();
         return view('dashboard.datakost.index', compact('datakost'));
     }
 

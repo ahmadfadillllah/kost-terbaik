@@ -18,50 +18,6 @@
                     <span class="title">Informasi Kost</span>
                 </a>
             </li>
-            @if (Auth::user()->role == 'admin')
-                <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="{{ route('kriteria.index') }}">
-                        <span class="icon-holder">
-                            <i class="anticon anticon-appstore"></i>
-                        </span>
-                        <span class="title">Data Kriteria</span>
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="{{ route('alternatif.index') }}">
-                        <span class="icon-holder">
-                            <i class="anticon anticon-appstore"></i>
-                        </span>
-                        <span class="title">Data Alternatif</span>
-                    </a>
-                </li>
-            @endif
-            <hr>
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
-                    <span class="icon-holder">
-                        <i class="anticon anticon-form"></i>
-                    </span>
-                    <span class="title">Nilai Kriteria</span>
-                </a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
-                    <span class="icon-holder">
-                        <i class="anticon anticon-form"></i>
-                    </span>
-                    <span class="title">Nilai Alternatif</span>
-                </a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
-                    <span class="icon-holder">
-                        <i class="anticon anticon-form"></i>
-                    </span>
-                    <span class="title">Hasil Alternatif</span>
-                </a>
-            </li>
-            <hr>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
@@ -78,6 +34,46 @@
                     <span class="title">Rekomendasi Kost</span>
                 </a>
             </li>
+            <hr>
+            <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pemilik Kost</h6>
+            @if (Auth::user()->role == 'admin')
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="{{ route('kriteria.index') }}">
+                        <span class="icon-holder">
+                            <i class="anticon anticon-appstore"></i>
+                        </span>
+                        <span class="title">Data Kriteria</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);">
+                        <span class="icon-holder">
+                            <i class="anticon anticon-form"></i>
+                        </span>
+                        <span class="title">Perhitungan</span>
+                    </a>
+                </li>
+            @endif
+            <hr>
+            <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mahasiswa</h6>
+            @if (Auth::user()->role == 'admin')
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="{{ route('kriteria.index') }}">
+                        <span class="icon-holder">
+                            <i class="anticon anticon-appstore"></i>
+                        </span>
+                        <span class="title">Data Kriteria</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);">
+                        <span class="icon-holder">
+                            <i class="anticon anticon-form"></i>
+                        </span>
+                        <span class="title">Perhitungan</span>
+                    </a>
+                </li>
+            @endif
             <hr>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="{{ route('profile.index') }}">
