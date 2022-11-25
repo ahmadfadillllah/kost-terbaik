@@ -22,6 +22,6 @@ class DatabaseSeeder extends Seeder
             SubKriteriaMahasiswaSeeder::class,
             SubKriteriaPemilikKostSeeder::class,
         ]);
-        \App\Models\Kost::factory(10)->create();
+        // \App\Models\Kost::factory(10)->create();
     }
 }
