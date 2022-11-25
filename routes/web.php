@@ -2,10 +2,16 @@
 
 use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BordaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataKostController;
-use App\Http\Controllers\KriteriaController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KriteriaMahasiswaController;
+use App\Http\Controllers\KriteriaPemilikKostController;
+use App\Http\Controllers\PerhitunganMahasiswaController;
+use App\Http\Controllers\PerhitunganPemilikKostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RekomendasiKostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +25,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing-page.index');
-})->name('landing-page');
+Route::get('/', [HomeController::class, 'index'])->name('landing-page');
+Route::get('/about', [HomeController::class, 'about'])->name('landing-page.about');
+Route::get('/contact', [HomeController::class, 'contact'])->name('landing-page.contact');
+
 
 //Authentication
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -34,28 +41,37 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/forgot-password', [AuthController::class, 'forgotpassword'])->name('forgotpassword');
 
 
-Route::group(['middleware' => ['auth', 'checkRole:admin,mahasiswa']], function(){
+Route::group(['middleware' => ['auth', 'checkRole:admin,mahasiswa,pemilikkost']], function(){
 
     //Dashboard
     Route::get('/dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
 
     //Data Kost
     Route::get('/dashboard/data-kost', [DataKostController::class, 'index'])->name('datakost.index');
-    Route::post('/dashboard/data-kost/insert', [DataKostController::class, 'insert'])->name('datakost.insert');
+    Route::get('/dashboard/data-kost/insert', [DataKostController::class, 'insert'])->name('datakost.insert');
+    Route::post('/dashboard/data-kost/push', [DataKostController::class, 'push'])->name('datakost.push');
+    Route::get('/dashboard/data-kost/edit/{id}', [DataKostController::class, 'edit'])->name('datakost.edit');
     Route::post('/dashboard/data-kost/update/{id}', [DataKostController::class, 'update'])->name('datakost.update');
     Route::get('/dashboard/data-kost/delete/{id}', [DataKostController::class, 'delete'])->name('datakost.delete');
 
-    //Data Kriteria
-    Route::get('/dashboard/kriteria', [KriteriaController::class, 'index'])->name('kriteria.index');
-    Route::post('/dashboard/kriteria/insert', [KriteriaController::class, 'insert'])->name('kriteria.insert');
-    Route::post('/dashboard/kriteria/update/{id}', [KriteriaController::class, 'update'])->name('kriteria.update');
-    Route::get('/dashboard/kriteria/delete/{id}', [KriteriaController::class, 'delete'])->name('kriteria.delete');
+    //Rekomendasi Kost
+    Route::get('/dashboard/rekomendasi-kost', [RekomendasiKostController::class, 'index'])->name('rekomendasikost.index');
 
-    //Data Alternatif
-    Route::get('/dashboard/alternatif', [AlternatifController::class, 'index'])->name('alternatif.index');
-    Route::post('/dashboard/alternatif/insert', [AlternatifController::class, 'insert'])->name('alternatif.insert');
-    Route::post('/dashboard/alternatif/update/{id}', [AlternatifController::class, 'update'])->name('alternatif.update');
-    Route::get('/dashboard/alternatif/delete/{id}', [AlternatifController::class, 'delete'])->name('alternatif.delete');
+    // Kriteria Mahasiswa
+    Route::get('/dashboard/kriteria-mahasiswa', [KriteriaMahasiswaController::class, 'index'])->name('kriteriamahasiswa.index');
+
+    // Kriteria Pemilik Kost
+    Route::get('/dashboard/kriteria-pemilikkost', [KriteriaPemilikKostController::class, 'index'])->name('kriteriapemilikkost.index');
+
+    //Perhitungan Mahasiswa
+    Route::get('/dashboard/perhitungan-mahasiswa', [PerhitunganMahasiswaController::class, 'index'])->name('perhitunganmahasiswa.index');
+
+    //Perhitungan Pemilik Kost
+    Route::get('/dashboard/perhitungan-pemilikkost', [PerhitunganPemilikKostController::class, 'index'])->name('perhitunganpemilikkost.index');
+
+    //Perhitungan Borda
+    Route::get('/dashboard/borda', [BordaController::class, 'index'])->name('borda.index');
+    Route::post('/dashboard/borda/upload', [BordaController::class, 'upload'])->name('borda.upload');
 
     //Profil
     Route::get('/dashboard/profile', [ProfileController::class, 'index'])->name('profile.index');

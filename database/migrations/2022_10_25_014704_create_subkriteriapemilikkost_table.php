@@ -18,7 +18,8 @@ class CreateSubkriteriapemilikkostTable extends Migration
             $table->unsignedBigInteger('id_kriteriapemilikkost');
             $table->integer('kode');
             $table->string('nama');
-            $table->integer('bobot');
+            $table->double('bobot');
+            $table->string('keterangan');
             $table->timestamps();
 
             $table->foreign('id_kriteriapemilikkost')->references('id')->on('kriteriapemilikkost');

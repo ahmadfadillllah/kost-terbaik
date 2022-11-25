@@ -42,7 +42,8 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => ['required', 'min:5'],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'unique:users,email'],
+            'nohp' => ['required', 'min:11'],
             'password' => ['required', 'min:8', 'confirmed'],
             'checkbox' => ['accepted'],
         ]);
@@ -50,8 +51,9 @@ class AuthController extends Controller
         $user = User::insert([
             'name' => $request->name,
             'email' => $request->email,
+            'nohp' => $request->nohp,
             'password' => Hash::make($request->password),
-            'role' => 'mahasiswa',
+            'role' => $request->role,
             'avatar' => 'user.png'
         ]);
 

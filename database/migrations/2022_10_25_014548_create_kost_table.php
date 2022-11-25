@@ -14,20 +14,22 @@ class CreateKostTable extends Migration
     public function up()
     {
         Schema::create('kost', function (Blueprint $table) {
-            $table->id();
-            $table->integer('kodekost');
-            $table->string('namakost');
-            $table->string('gambar');
+            $table->id()->softDeletes();
+            $table->unsignedBigInteger('id_user');
+            $table->string('nama_kost');
             $table->string('fasilitas');
-            $table->bigInteger('hargasewa');
-            $table->string('sistemkontrak');
+            $table->bigInteger('harga_sewa');
             $table->string('lokasi');
             $table->string('kenyamanan');
             $table->string('keamanan');
-            $table->string('luas_kamar');
-            $table->string('jarak_dari_kampus');
+            $table->integer('panjangkamar');
+            $table->integer('lebarkamar');
+            $table->integer('jarak_dari_kampus');
             $table->string('desain_rumah');
+            $table->string('gambar');
             $table->timestamps();
+
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 

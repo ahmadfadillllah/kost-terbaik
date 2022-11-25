@@ -19,26 +19,28 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
+                <a class="dropdown-toggle" href="{{ route('borda.index') }}">
                     <span class="icon-holder">
-                        <i class="anticon anticon-search"></i>
+                        <i class="anticon anticon-form"></i>
                     </span>
-                    <span class="title">Cari Kost</span>
+                    <span class="title">Perhitungan Borda</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
+                <a class="dropdown-toggle" href="{{ route('rekomendasikost.index') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-file"></i>
                     </span>
                     <span class="title">Rekomendasi Kost</span>
                 </a>
             </li>
+            @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
             <hr>
-            <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pemilik Kost</h6>
-            @if (Auth::user()->role == 'admin')
+            <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PK</h6>
+            @endif
+            @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
                 <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="{{ route('kriteria.index') }}">
+                    <a class="dropdown-toggle" href="{{ route('kriteriapemilikkost.index') }}">
                         <span class="icon-holder">
                             <i class="anticon anticon-appstore"></i>
                         </span>
@@ -46,7 +48,7 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="javascript:void(0);">
+                    <a class="dropdown-toggle" href="{{ route('perhitunganpemilikkost.index') }}">
                         <span class="icon-holder">
                             <i class="anticon anticon-form"></i>
                         </span>
@@ -54,11 +56,13 @@
                     </a>
                 </li>
             @endif
+            @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
             <hr>
-            <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mahasiswa</h6>
-            @if (Auth::user()->role == 'admin')
+            <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M</h6>
+            @endif
+            @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
                 <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="{{ route('kriteria.index') }}">
+                    <a class="dropdown-toggle" href="{{ route('kriteriamahasiswa.index') }}">
                         <span class="icon-holder">
                             <i class="anticon anticon-appstore"></i>
                         </span>
@@ -66,7 +70,7 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="javascript:void(0);">
+                    <a class="dropdown-toggle" href="{{ route('perhitunganmahasiswa.index') }}">
                         <span class="icon-holder">
                             <i class="anticon anticon-form"></i>
                         </span>

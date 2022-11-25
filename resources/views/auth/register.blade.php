@@ -21,6 +21,10 @@
                             <input type="email" class="form-control" name="email" placeholder="Email">
                         </div>
                         <div class="form-group">
+                            <label class="font-weight-semibold" for="userName">No. Handphone</label>
+                            <input type="number" class="form-control" name="nohp" placeholder="No. Handphone">
+                        </div>
+                        <div class="form-group">
                             <label class="font-weight-semibold" for="password">Password:</label>
                             <input type="password" class="form-control" name="password" placeholder="Password">
                         </div>
@@ -28,6 +32,13 @@
                             <label class="font-weight-semibold" for="confirmPassword">Confirm Password:</label>
                             <input type="password" class="form-control" name="password_confirmation"
                                 placeholder="Confirm Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputState">Sebagai</label>
+                            <select id="inputState" name="role" class="form-control">
+                                <option value="mahasiswa">Mahasiswa</option>
+                                <option value="pemilikkost">Pemilik Kost</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <div class="d-flex align-items-center justify-content-between p-t-15">

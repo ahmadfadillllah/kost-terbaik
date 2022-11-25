@@ -18,7 +18,8 @@ class CreateSubkriteriamahasiswaTable extends Migration
             $table->unsignedBigInteger('id_kriteriamahasiswa');
             $table->integer('kode');
             $table->string('nama');
-            $table->integer('bobot');
+            $table->double('bobot');
+            $table->string('keterangan');
             $table->timestamps();
 
             $table->foreign('id_kriteriamahasiswa')->references('id')->on('kriteriamahasiswa');

@@ -1,236 +1,556 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-<!-- Mirrored from themesdesign.in/peyso/layout/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Jun 2022 00:59:55 GMT -->
+<!doctype html>
+<html lang="zxx">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing Page | Penentuan {{ env('APP_NAME') }}</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="Ahmad Fadillah" />
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('landing-page') }}/images/favicon.ico">
+        <!-- Links of CSS files -->
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/animate.min.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/meanmenu.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/boxicons.min.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/flaticon.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/odometer.min.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/nice-select.min.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/magnific-popup.min.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/fancybox.min.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/style.css">
+        <link rel="stylesheet" href="{{ asset('default') }}/assets/css/dark.css">
+		<link rel="stylesheet" href="{{ asset('default') }}/assets/css/responsive.css">
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ asset('landing-page') }}/css/bootstrap.min.css" type="text/css">
+		<title>{{ config('app.name') }}</title>
 
-    <!-- Material Icon -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('landing-page') }}/css/materialdesignicons.min.css" />
+        <link rel="icon" type="image/png" href="{{ asset('admin/demo/app/assets/images/logo/favicon.png') }}">
+    </head>
 
-    <!-- tinyslider -->
-    <link rel="stylesheet" href="{{ asset('landing-page') }}/css/tiny-slider.css">
+    <body>
 
-    <!-- Custom  sCss -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('landing-page') }}/css/style.css" />
-
-</head>
-
-<body data-spy="scroll" data-target=".navbar" data-offset="58">
-
-    <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
-        <div class="container">
-            <!-- LOGO -->
-            <a class="logo text-uppercase" href="index-1.html">
-                    <img src="{{ asset('landing-page') }}/images/logo-light.png" alt="" class="logo-light" height="50" />
-                    <img src="{{ asset('landing-page') }}/images/logo-dark.png" alt="" class="logo-dark" height="50" />
-                </a>
-
-            <a href="#" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="mdi mdi-menu"></i>
-                </a>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto navbar-center mt-lg-0 mt-2" id="navbar-navlist">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link" id="scrollElement">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">Tenang</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Kontak</a>
-                    </li>
-                </ul>
-                <a href="{{ route('login') }}" class="btn btn-info btn-sm navbar-btn my-lg-0 my-2">Login</a>
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
             </div>
         </div>
-    </nav>
-    <!-- Navbar End -->
+        <!-- End Preloader -->
 
-    <!-- Hero section Start -->
-    <section class="hero-3 position-relative align-items-center justify-content-center d-flex overflow-hidden" style="background-image: url({{ asset('landing-page') }}/images/hero-3-bg.jpg);" id="home">
-        <div class="bg-overlay"></div>
-        <div class="container">
-            <div class="row position-relative align-items-center justify-content-center">
-                <div class="col-lg-8">
-                    <div class="hero-3-content text-center py-5 px-4 mt-4">
-                        <span class="con-border-top"></span>
-                        <h6 class="text-white text-uppercase mt-3 mb-2">- tentang kami</h6>
-                        <h1 class="hero-3-title text-white mb-lg-3 mb-2">Penentuan Kost Terbaik</h1>
-                        <p class="mb-4 text-white-50">Sistem pendukung keputusan penentuan kost terbaik menggunakan metode <br><i>Analytical Hierarchy Process</i></p>
-                        <a href="{{ route('dashboard.index') }}" class="btn btn-info">Info Selanjutnya<i class="mdi mdi-arrow-right ml-1"></i></a>
-                        <span class="con-border-bottom"></span>
+        <!-- Start Navbar Area -->
+        <div class="navbar-area">
+            <div class="main-responsive-nav">
+                <div class="container">
+                    <div class="main-responsive-menu">
+                        <div class="logo">
+                            <a href="javascript:void(0);">
+                                <img src="{{ asset('admin/demo/app/assets/images/logo/logo-dark.png') }}" class="black-logo" alt="image" width="100">
+                                <img src="{{ asset('admin/demo/app/assets/images/logo/logo-white.png') }}" class="white-logo" alt="image" width="100">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- Hero section End -->
 
-    <!-- Start About -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="text-center mb-5">
-                        <h3 class="mb-3">A digital web design studio creating modern & engaging online</h3>
-                        <p class="text-muted">
-                            If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages new common will be more regular than the existing If several is more
-                            simple and regular than that of the individual languages new common will be more regular than the existing
+            <div class="main-navbar">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="javascript:void(0);">
+                            <img src="{{ asset('admin/demo/app/assets/images/logo/logo-dark.png') }}" class="black-logo" alt="image" width="100">
+                            <img src="{{ asset('admin/demo/app/assets/images/logo/logo-white.png') }}" class="white-logo" alt="image" width="100">
+                        </a>
+
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+
+                            <ul class="navbar-nav m-auto">
+                                <li class="nav-item">
+                                    <a href="{{ route('landing-page') }}" class="nav-link active">Home</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{ route('landing-page.about') }}" class="nav-link">Tentang</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{ route('landing-page.contact') }}" class="nav-link">Kontak</a>
+                                </li>
+                            </ul>
+
+                            <div class="others-options d-flex align-items-center">
+                                <div class="option-item">
+                                    <div class="user-box">
+                                        <a href="{{ route('login') }}"><i class='bx bxs-user'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="others-option-for-responsive">
+                <div class="container">
+                    <div class="dot-menu">
+                        <div class="inner">
+                            <div class="circle circle-one"></div>
+                            <div class="circle circle-two"></div>
+                            <div class="circle circle-three"></div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="option-inner">
+                            <div class="others-options d-flex align-items-center">
+                                <div class="option-item">
+                                    <a href="listing.html" class="default-btn">ADD LISTING + <span></span></a>
+                                </div>
+
+                                <div class="option-item">
+                                    <div class="user-box">
+                                        <a href="login.html"><i class='bx bxs-user'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar Area -->
+
+        <!-- Start Main Slides With Featured Area -->
+        <div class="main-slides-with-featured-area">
+            <div class="home-slides-two owl-carousel owl-theme">
+                @foreach ($kost2 as $item)
+                <div class="slides-item-box item-{{ $item->id }}">
+                    <div class="container">
+                        <div class="slides-content-box">
+                            <div class="top-content">
+                                <ul class="tag-list">
+                                    <li class="featured"><a href="property-details.html">Featured</a></li>
+                                </ul>
+
+                                {{-- <div class="price">@currency($item->harga_sewa)</div> --}}
+                                <span>{{ $item->keamanan }}</span>
+                                <h3>
+                                    <a href="property-details.html">{{ $item->nama_kost }}</a>
+                                </h3>
+                                <p>{{ $item->desain_rumah }}</p>
+
+                                <ul class="featured-list">
+                                    <li><i class='bx bx-bed'></i>{{ implode(' . ', json_decode($item->fasilitas)) }}</li>
+                                </ul>
+                            </div>
+
+                            <div class="bottom-content">
+                                <ul class="rating-list">
+                                    <li><i class='bx bxs-star'></i></li>
+                                    <li><i class='bx bxs-star'></i></li>
+                                    <li><i class='bx bxs-star'></i></li>
+                                    <li><i class='bx bxs-star'></i></li>
+                                    <li class="color-gray"><i class='bx bxs-star'></i></li>
+                                    <li>{{ $item->panjangkamar }} x {{ $item->lebarkamar }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        <!-- End Main Slides With Featured Area -->
+
+        <!-- Start Featured Area -->
+        <div class="featured-area ptb-100">
+            <div class="container">
+                <div class="section-title">
+                    <h3>Rekomendasi Kost</h3>
+                </div>
+
+                <div class="featured-slides owl-carousel owl-theme">
+                    @foreach ($kost as $k)
+                    <div class="featured-item-box">
+                        <div class="featured-image">
+                            <a href="javascript:void(0);"><img src="{{ asset('admin/demo/app/images') }}/{{ $k->gambar }}" alt="image"></a>
+
+                           <div class="tag"><a href="javascript:void(0);">RECOMENDED</a></div>
+
+                            <div class="featured-top-content">
+                                <span>{{ $k->keamanan }}</span>
+                                <h3>
+                                    <a href="javascript:void(0);">{{ $k->nama_kost }}</a>
+                                </h3>
+                                <p>@currency($k->harga_sewa) /bulan</p>
+
+                                <ul class="featured-list">
+                                    <li><i class='bx bx-bed'></i>{{ implode(' . ', json_decode($k->fasilitas)) }}</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="featured-bottom-content">
+                            <ul class="rating-list">
+                                <li><i class='bx bxs-star'></i></li>
+                                <li><i class='bx bxs-star'></i></li>
+                                <li><i class='bx bxs-star'></i></li>
+                                <li><i class='bx bxs-star'></i></li>
+                                <li class="color-gray"><i class='bx bxs-star'></i></li>
+                                <li>{{ $k->panjangkamar }} x {{ $k->lebarkamar }}</li>
+                            </ul>
+
+                            <div class="featured-btn">
+                                <a href="javascript:void(0);" class="default-btn">{{ $k->rank }}<span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <!-- End Featured Area -->
+
+
+        <!-- Start Facilities Area -->
+        <div class="facilities-area pt-100 pb-70">
+            <div class="container">
+                <div class="section-title">
+                    <h3>Daftar Fasilitas Kost</h3>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-facilities">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/facilities/facilities-1.png" alt="image">
+                            </div>
+
+                            <h3>No Revenue Loss</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-facilities">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/facilities/facilities-2.png" alt="image">
+                            </div>
+
+                            <h3>6 Month Free Service</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-facilities">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/facilities/facilities-3.png" alt="image">
+                            </div>
+
+                            <h3>24/7 Service</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-facilities">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/facilities/facilities-4.png" alt="image">
+                            </div>
+
+                            <h3>Low Price</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-facilities">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/facilities/facilities-5.png" alt="image">
+                            </div>
+
+                            <h3>Value Relationship</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-facilities">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/facilities/facilities-6.png" alt="image">
+                            </div>
+
+                            <h3>Easy Installment</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Facilities Area -->
+
+        <!-- Start Customers Area -->
+        <div class="customers-area ptb-100">
+            <div class="container">
+                <div class="section-title">
+                    <h3>Review dari Mahasiswa</h3>
+                </div>
+
+                <div class="customers-slides owl-carousel owl-theme">
+                    <div class="customers-item">
+                        <div class="customers-info">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/customers/image-1.jpg" alt="image">
+                            </div>
+
+                            <h4>Thomas Josaf</h4>
+                            <span>CEO of Gacsor</span>
+                        </div>
+                        <p>Proin gravida nibh vel velit attor aliquet. Aenean sollicitudin lorem quis bibendum auctor.</p>
+
+                        <ul class="rating-list">
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li class="color-gray"><i class='bx bxs-star'></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="customers-item">
+                        <div class="customers-info">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/customers/image-2.jpg" alt="image">
+                            </div>
+
+                            <h4>John Smith</h4>
+                            <span>Restaurant Owner</span>
+                        </div>
+                        <p>Proin gravida nibh vel velit attor aliquet. Aenean sollicitudin lorem quis bibendum auctor.</p>
+
+                        <ul class="rating-list">
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li class="color-gray"><i class='bx bxs-star'></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="customers-item">
+                        <div class="customers-info">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/customers/image-3.jpg" alt="image">
+                            </div>
+
+                            <h4>Andy James</h4>
+                            <span>Hotel Owner</span>
+                        </div>
+                        <p>Proin gravida nibh vel velit attor aliquet. Aenean sollicitudin lorem quis bibendum auctor.</p>
+
+                        <ul class="rating-list">
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li class="color-gray"><i class='bx bxs-star'></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="customers-item">
+                        <div class="customers-info">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/customers/image-4.jpg" alt="image">
+                            </div>
+
+                            <h4>Alex Hales</h4>
+                            <span>Developer</span>
+                        </div>
+                        <p>Proin gravida nibh vel velit attor aliquet. Aenean sollicitudin lorem quis bibendum auctor.</p>
+
+                        <ul class="rating-list">
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li class="color-gray"><i class='bx bxs-star'></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="customers-item">
+                        <div class="customers-info">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/customers/image-1.jpg" alt="image">
+                            </div>
+
+                            <h4>Thomas Josaf</h4>
+                            <span>CEO of Gacsor</span>
+                        </div>
+                        <p>Proin gravida nibh vel velit attor aliquet. Aenean sollicitudin lorem quis bibendum auctor.</p>
+
+                        <ul class="rating-list">
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li class="color-gray"><i class='bx bxs-star'></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="customers-item">
+                        <div class="customers-info">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/customers/image-2.jpg" alt="image">
+                            </div>
+
+                            <h4>John Smith</h4>
+                            <span>Restaurant Owner</span>
+                        </div>
+                        <p>Proin gravida nibh vel velit attor aliquet. Aenean sollicitudin lorem quis bibendum auctor.</p>
+
+                        <ul class="rating-list">
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li class="color-gray"><i class='bx bxs-star'></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="customers-item">
+                        <div class="customers-info">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/customers/image-3.jpg" alt="image">
+                            </div>
+
+                            <h4>Andy James</h4>
+                            <span>Hotel Owner</span>
+                        </div>
+                        <p>Proin gravida nibh vel velit attor aliquet. Aenean sollicitudin lorem quis bibendum auctor.</p>
+
+                        <ul class="rating-list">
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li class="color-gray"><i class='bx bxs-star'></i></li>
+                        </ul>
+                    </div>
+
+                    <div class="customers-item">
+                        <div class="customers-info">
+                            <div class="image">
+                                <img src="{{ asset('default') }}/assets/images/customers/image-4.jpg" alt="image">
+                            </div>
+
+                            <h4>Alex Hales</h4>
+                            <span>Developer</span>
+                        </div>
+                        <p>Proin gravida nibh vel velit attor aliquet. Aenean sollicitudin lorem quis bibendum auctor.</p>
+
+                        <ul class="rating-list">
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li><i class='bx bxs-star'></i></li>
+                            <li class="color-gray"><i class='bx bxs-star'></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Customers Area -->
+
+        <!-- Start Footer Area -->
+        <footer class="footer-area pt-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-footer-widget">
+                            <div class="widget-logo">
+                                <a href="javascript:void(0);">
+                                    <img src="{{ asset('admin/demo/app/assets/images/logo/logo-white.png') }}" alt="image" width="200px">
+                                </a>
+                            </div>
+
+                            <p>Aplikasi penentuan kost terbaik menggunakan metode AHP dan Borda</p>
+
+                            <ul class="widget-social">
+                                <li>
+                                    <a href="/" target="_blank"><i class='bx bxl-facebook'></i></a>
+                                </li>
+                                <li>
+                                    <a href="/" target="_blank"><i class='bx bxl-twitter'></i></a>
+                                </li>
+                                <li>
+                                    <a href="/" target="_blank"><i class='bx bxl-instagram'></i></a>
+                                </li>
+                                <li>
+                                    <a href="/" target="_blank"><i class='bx bxl-pinterest-alt'></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-footer-widget">
+                            <h3>Contact</h3>
+
+                            <ul class="widget-info">
+                                <li>
+                                    <i class='bx bxs-map'></i>
+                                    Fakultas Ilmu Komputer, Universitas Muslim Indonesia
+                                </li>
+
+                                <li>
+                                    <i class='bx bxs-phone'></i>
+                                    <a href="/">+62 823-9943-1723</a>
+                                </li>
+
+                                <li>
+                                    <i class='bx bx-envelope'></i>
+                                    <a href="/"><span class="__cf_email__" data-cfemail="bfd7dad3d3d0ffd9d6dbd091dcd0d2">[email&#160;protected]</span></a>
+                                </li>
+
+                                <li>
+                                    <i class='bx bx-time'></i>
+                                    9 AM - 5 PM (Sun-Thur)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="copyright-area-content">
+                        <p>
+                            Copyright @<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script> {{ config('app.name') }}. All Rights Reserved by
+                            <a href="https://adhyy.my.id/" target="_blank">Adhyy</a>
                         </p>
                     </div>
                 </div>
             </div>
-            <!-- end row -->
+        </footer>
+        <!-- End Footer Area -->
 
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="text-center p-4">
-                        <div class="icons-xl mb-3">
-                            <i class="uim uim-ruler"></i>
-                        </div>
-
-                        <h5>Web Designing</h5>
-                        <p class="text-muted">If several languages coalesce, the grammar of the resulting language is more regular than that of the individual</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4">
-                    <div class="text-center p-4">
-                        <div class="icons-xl mb-3">
-                            <i class="uim uim-repeat"></i>
-                        </div>
-
-                        <h5>Programming</h5>
-                        <p class="text-muted">To achieve this, it would be necessary to have uniform more common several languages coalesce</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4">
-                    <div class="text-center p-4">
-                        <div class="icons-xl mb-3">
-                            <i class="uim uim-airplay"></i>
-                        </div>
-
-                        <h5>Software Development</h5>
-                        <p class="text-muted">For science, music, sport, etc, Europe uses the same vocabulary only differ in their pronunciation.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
+        <!-- Start Go Top Area -->
+        <div class="go-top">
+            <i class='bx bx-chevron-up'></i>
         </div>
-        <!-- end container -->
-    </section>
-    <!-- end About -->
+        <!-- End Go Top Area -->
 
+        <!-- Links of JS files -->
+        <script src="{{ asset('default') }}/assets/js/jquery.min.js"></script>
+        <script src="{{ asset('default') }}/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('default') }}/assets/js/jquery.meanmenu.js"></script>
+        <script src="{{ asset('default') }}/assets/js/owl.carousel.min.js"></script>
+        <script src="{{ asset('default') }}/assets/js/jquery.appear.js"></script>
+        <script src="{{ asset('default') }}/assets/js/odometer.min.js"></script>
+        <script src="{{ asset('default') }}/assets/js/nice-select.min.js"></script>
+        <script src="{{ asset('default') }}/assets/js/jquery-ui.min.js"></script>
+        <script src="{{ asset('default') }}/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="{{ asset('default') }}/assets/js/fancybox.min.js"></script>
+		<script src="{{ asset('default') }}/assets/js/jquery.ajaxchimp.min.js"></script>
+		<script src="{{ asset('default') }}/assets/js/form-validator.min.js"></script>
+        <script src="{{ asset('default') }}/assets/js/contact-form-script.js"></script>
+        <script src="{{ asset('default') }}/assets/js/wow.min.js"></script>
+        <script src="{{ asset('default') }}/assets/js/main.js"></script>
+    </body>
 
-    <!-- Start contact -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card contact-section-card mb-0">
-                        <div class="card-body p-md-5">
-                            <div class="text-center title mb-5">
-                                <p class="text-muted text-uppercase fw-normal mb-2">Kontak</p>
-                                <h3 class="mb-3">Punya pertanyaan?</h3>
-                                <div class="title-icon position-relative">
-                                    <div class="position-relative">
-                                        <i class="uim uim-arrow-circle-down"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- start form -->
-                            <form method="post" name="myForm" onsubmit="return validateForm()" href="javascript: void(0);">
-                                <p id="error-msg"></p>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="name">Nama</label>
-                                            <input name="name" id="name" type="text" class="form-control" placeholder="Enter your name..." />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label class="form-label" for="email">Alamat email</label>
-                                            <input name="email" id="email" type="email" class="form-control" placeholder="Enter your email..." />
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end row -->
-
-                                <div class="mb-3">
-                                    <label class="form-label" for="subject">Subject</label>
-                                    <input name="subject" id="subject" type="text" class="form-control" placeholder="Enter Subject..." />
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label" for="comments">Pesan</label>
-                                    <textarea name="comments" id="comments" rows="3" class="form-control" placeholder="Enter your message..."></textarea>
-                                </div>
-
-                                <div class="text-right">
-                                    <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Kirim pesan" />
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- end contact -->
-
-    <!-- Start footer-alt -->
-    <section class="footer-alt py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-center text-white-50">
-                        <p class="mb-0">2022 © Penentuan Kost Terbaik. Create by <a href="https://adhyy.my.id" target="_blank">Adhyy</a></p>
-                    </div>
-                </div>
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </section>
-    <!-- end footer-alt -->
-
-
-    <!-- Javascript -->
-    <script src="{{ asset('landing-page') }}/js/bootstrap.bundle.min.js"></script>
-
-    <!-- unicons -->
-    <script src="../../../unicons.iconscout.com/release/v2.1.11/script/monochrome/bundle.js"></script>
-
-     <!-- testi-slider -->
-     <script src="{{ asset('landing-page') }}/js/tiny-slider.js"></script>
-
-
-    <!-- app js -->
-    <script src="{{ asset('landing-page') }}/js/app.js"></script>
-</body>
-
-
-<!-- Mirrored from themesdesign.in/peyso/layout/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Jun 2022 01:00:00 GMT -->
+<!-- Mirrored from templates.envytheme.com/fido/default/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Nov 2022 09:59:18 GMT -->
 </html>

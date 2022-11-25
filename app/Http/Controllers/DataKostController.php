@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DataKost;
 use App\Models\Kost;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class DataKostController extends Controller
@@ -12,33 +13,41 @@ class DataKostController extends Controller
     //
     public function index()
     {
-        $datakost = Kost::all();
+
+        if(Auth::user()->role == "pemilikkost"){
+            $datakost = Kost::all()->where('id_user', Auth::user()->id);
+        }else{
+            $datakost = Kost::all();
+        }
         return view('dashboard.datakost.index', compact('datakost'));
     }
 
     public function insert(Request $request)
     {
+        return view('dashboard.datakost.modal.tambah');
+    }
+
+    public function push(Request $request)
+    {
         $request->validate([
             'gambar' => ['required', 'mimes:png,jpg'],
-            'namakost' => ['required'],
-            'alamat' => ['required'],
-            'harga' => ['required'],
-            'fasilitas' => ['required'],
-            'tipekost' => ['required'],
-            'sistemkontrak' => ['required'],
         ]);
 
-        $harga1 = Str::replace('Rp', '', $request->harga);
+        $harga1 = Str::replace('Rp', '', $request->harga_sewa);
         $harga2 = Str::replace('.', '', $harga1);
 
-        $datakost = new DataKost;
-
-        $datakost->namakost = $request->namakost;
-        $datakost->alamat = $request->alamat;
-        $datakost->harga = $harga2;
-        $datakost->fasilitas = $request->fasilitas;
-        $datakost->tipekost = $request->tipekost;
-        $datakost->sistemkontrak = $request->sistemkontrak;
+        $datakost = new Kost;
+        $datakost->id_user = Auth::user()->id;
+        $datakost->nama_kost = $request->nama_kost;
+        $datakost->fasilitas = collect($request->fasilitas);
+        $datakost->harga_sewa = $harga2;
+        $datakost->lokasi = $request->lokasi;
+        $datakost->kenyamanan = $request->kenyamanan;
+        $datakost->keamanan = $request->keamanan;
+        $datakost->panjangkamar = $request->panjangkamar;
+        $datakost->lebarkamar = $request->lebarkamar;
+        $datakost->jarak_dari_kampus = $request->jarak_dari_kampus;
+        $datakost->desain_rumah = $request->desain_rumah;
         $date = date('Ymd His gis');
 
         if($request->hasFile('gambar')){
@@ -46,31 +55,45 @@ class DataKostController extends Controller
             $datakost->gambar = $date.$request->file('gambar')->getClientOriginalName();
             $datakost->save();
 
-            return redirect()->back()->with('success', 'Kost telah ditambahkan');
+            return redirect()->route('datakost.index')->with('success', 'Kost telah ditambahkan');
         }
 
-        return redirect()->back()->with('info', 'Kost gagal ditambahkan');
+        return redirect()->route('datakost.index')->with('info', 'Kost gagal ditambahkan');
+    }
+
+    public function edit($id)
+    {
+        $kost = Kost::all()->where('id', $id)->first();
+        return view('dashboard.datakost.modal.edit', compact('kost'));
     }
 
     public function update(Request $request, $id)
     {
-        $datakost = DataKost::where('id', $id)->update([
-            'harga' => $request->harga,
-            'fasilitas' => $request->fasilitas,
-            'tipekost' => $request->tipekost,
-            'sistemkontrak' => $request->sistemkontrak,
+        $harga1 = Str::replace('Rp', '', $request->harga_sewa);
+        $harga2 = Str::replace('.', '', $harga1);
+
+        $datakost = Kost::where('id', $id)->update([
+            'fasilitas' => collect($request->fasilitas),
+            'harga_sewa' => $harga2,
+            'lokasi' => $request->lokasi,
+            'kenyamanan' => $request->kenyamanan,
+            'keamanan' => $request->keamanan,
+            'panjangkamar' => $request->panjangkamar,
+            'lebarkamar' => $request->lebarkamar,
+            'jarak_dari_kampus' => $request->jarak_dari_kampus,
+            'desain_rumah' => $request->desain_rumah,
         ]);
 
         if($datakost){
-            return redirect()->back()->with('success', 'Kost berhasil diubah');
+            return redirect()->route('datakost.index')->with('success', 'Kost berhasil diubah');
         }
 
-        return redirect()->back()->with('info', 'Kost gagal diubah');
+        return redirect()->route('datakost.index')->with('info', 'Kost gagal diubah');
     }
 
     public function delete($id)
     {
-        $datakost = DataKost::where('id', $id)->delete();
+        $datakost = Kost::where('id', $id)->delete();
 
         if($datakost){
             return redirect()->back()->with('success', 'Kost berhasil dihapus');

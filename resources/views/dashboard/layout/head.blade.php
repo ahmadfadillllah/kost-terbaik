@@ -11,6 +11,8 @@
 
     <!-- page css -->
     <link href="{{ asset('admin/demo/app') }}/assets/vendors/select2/select2.css" rel="stylesheet">
+    <link href="{{ asset('admin/demo/app') }}/assets/vendors/datatables/dataTables.bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Core css -->
     <link href="{{ asset('admin/demo/app') }}/assets/css/app.min.css" rel="stylesheet">

@@ -76,6 +76,21 @@
 
     <!-- page js -->
     <script src="{{ asset('admin/demo/app') }}/assets/vendors/select2/select2.min.js"></script>
+    <script src="{{ asset('admin/demo/app') }}/assets/vendors/datatables/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('admin/demo/app') }}/assets/vendors/datatables/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+    });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#data-table1').DataTable();
+            $('#data-table2').DataTable();
+            $('#data-table3').DataTable();
+            $('#data-table4').DataTable();
+    });
+    </script>
     <script src="{{ asset('admin/demo/app') }}/assets/vendors/chartjs/Chart.min.js"></script>
     <script src="{{ asset('admin/demo/app') }}/assets/js/pages/dashboard-default.js"></script>
 

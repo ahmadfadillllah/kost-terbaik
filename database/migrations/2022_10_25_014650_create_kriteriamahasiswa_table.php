@@ -15,13 +15,9 @@ class CreateKriteriamahasiswaTable extends Migration
     {
         Schema::create('kriteriamahasiswa', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_kost');
-            $table->integer('kode');
             $table->string('nama');
-            $table->integer('bobot');
+            $table->double('bobot');
             $table->timestamps();
-
-            $table->foreign('id_kost')->references('id')->on('kost');
         });
     }
 

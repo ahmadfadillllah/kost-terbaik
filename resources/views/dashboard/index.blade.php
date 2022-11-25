@@ -12,7 +12,7 @@
                             <i class="anticon anticon-info"></i>
                         </div>
                         <div class="m-l-15">
-                            <h2 class="m-b-0">Information</h2>
+                            <h2 class="m-b-0">Informasi</h2>
                             <p class="m-b-0 text-muted">Selamat datang dihalaman dashboard | Sistem Pendukung Keputusan
                                 Penentuan Kost Terbaik</p>
                         </div>

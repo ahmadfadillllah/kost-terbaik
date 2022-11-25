@@ -14,27 +14,39 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahKost" style="float: right;">
-                <i class="anticon anticon-plus m-r-5"></i>Tambahkan Kost
-            </button>
-            @include('dashboard.datakost.modal.tambah')
+            @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
+            <a href="{{ route('datakost.insert') }}" class="btn btn-primary" style="float: right;"><i class="anticon anticon-plus m-r-5"></i>Tambah Kost</a>
+            @endif
             <h4>Data Kost</h4>
             <p>Ini adalah daftar kost yang telah ditambahkan.</p>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 col-lg-4">
-            <div class="card" style="max-width: 370px">
-                <img class="card-img-top" src="https://yuklegal.com/wp-content/uploads/2021/11/tips-Manajemen-Rumah-Kost-yang-Baik-dan-Benar-.jpg" alt="">
-                <div class="card-body">
-                    <h4 class="m-t-10">Card Title</h4>
-                    ...
-                    <div class="m-t-20">
-                        <a href="" class="btn btn-primary">Action 1</a>
+        @foreach ($datakost as $dk)
+            <div class="col-md-4 col-lg-6">
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('admin/demo/app/images') }}/{{ $dk->gambar }}" alt="">
+                    <div class="card-body">
+                        <h4 class="m-t-10">{{ $dk->nama_kost }}</h4>
+                        <span class="badge badge-pill badge-magenta">Fasilitas: {{ implode(', ', json_decode($dk->fasilitas)) }}</span>
+                        <span class="badge badge-pill badge-red">Harga Sewa: @currency($dk->harga_sewa)/bulan</span>
+                        <span class="badge badge-pill badge-orange">Lokasi: {{ $dk->lokasi }}</span>
+                        <span class="badge badge-pill badge-gold">Kenyamanan: {{ $dk->kenyamanan }}</span>
+                        <span class="badge badge-pill badge-lime">Keamanan: {{ $dk->keamanan }}</span>
+                        <span class="badge badge-pill badge-green">Luas Kamar: {{ $dk->panjangkamar }} x {{ $dk->lebarkamar }} m<sup>2</sup></span>
+                        <span class="badge badge-pill badge-cyan">Jarak dari Kampus: {{ $dk->jarak_dari_kampus }} meter</span>
+                        <span class="badge badge-pill badge-blue">Desain Rumah: {{ $dk->desain_rumah }}</span>
+                        @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
+                        <div class="m-t-20">
+                            <a href="{{ route('datakost.edit', $dk->id) }}" class="btn btn-warning">Ubah</a>
+                            <a href="{{ route('datakost.delete', $dk->id) }}" onclick="return confirm('Yakin Hapus')" class="btn btn-danger">Hapus</a>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
+
     </div>
     <div class="card">
 

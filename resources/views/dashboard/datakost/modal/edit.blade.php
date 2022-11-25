@@ -1,51 +1,116 @@
-<div class="modal fade" id="editKost{{ $dk->id }}">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Kost</h5>
-                <button type="button" class="close" data-dismiss="modal">
-                    <i class="anticon anticon-close"></i>
-                </button>
-            </div>
-            <form action="{{ route('datakost.update', $dk->id) }}" method="POST" enctype="multipart/form-data">
+@include('dashboard.layout.head')
+@include('dashboard.layout.header')
+@include('dashboard.layout.sidebar')
+<!-- Content Wrapper START -->
+<div class="main-content">
+    <div class="page-header">
+        <h2 class="header-title">Informasi Kost</h2>
+        <div class="header-sub-title">
+            <nav class="breadcrumb breadcrumb-dash">
+                <a href="#" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Dashboard</a>
+                <a class="breadcrumb-item" href="#">Tambah Kost</a>
+            </nav>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4>Edit Kost</h4>
+            <hr>
+            <form action="{{ route('datakost.update', $kost->id) }}" method="post">
                 @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Nama Kost</label>
-                        <input type="text" class="form-control" name="namakost" value="{{ $dk->namakost }}" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Harga</label>
-                        <input type="text" class="form-control" id="rupiah" name="harga" value="{{ $dk->harga }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Fasilitas</label>
-                        <input type="text" class="form-control" name="fasilitas" value="{{ $dk->fasilitas }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Tipe Kost</label>
-                        <select class="form-control" name="tipekost" aria-label="Default select example">
-                            <option value="Menengah" selected>Menengah</option>
-                            <option value="Eksklusif">Eksklusif</option>
-                            <option value="Standard">Standard</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Sistem Kontrak</label>
-                        <select class="form-control" name="sistemkontrak" aria-label="Default select example">
-                            <option value="Bulanan" selected>Bulanan</option>
-                            <option value="Tahunan">Tahunan</option>
-                        </select>
+                <div class="m-t-25">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="">Nama Kost</label>
+                            <input type="text" class="form-control m-b-15" placeholder="Nama Kost" value="{{ $kost->nama_kost }}" readonly>
+                        </div>
+                        <div class="col-md-12">
+                            <br>
+                            <label for="">Fasilitas</label>
+                            <div class="m-b-15">
+                                <select class="js-example-basic-multiple" name="fasilitas[]" multiple="multiple" required>
+                                    <option value="Kasur">Kasur</option>
+                                    <option value="Meja">Meja</option>
+                                    <option value="Lemari">Lemari</option>
+                                    <option value="Kursi">Kursi</option>
+                                    <option value="AC">AC</option>
+                                    <option value="Kamar Mandi Dalam">Kamar Mandi Dalam</option>
+                                    <option value="Kamar Mandi Luar">Kamar Mandi Luar</option>
+                                    <option value="Kipas Angin">Kipas Angin</option>
+                                    <option value="TV">TV</option>
+                                    <option value="WiFi">WiFi</option>
+                                    <option value="Tempat Parkir">Tempat Parkir</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Harga Sewa (/bulan)</label>
+                            <input type="text" class="form-control m-b-15" id="rupiah" name="harga_sewa" value="@currency($kost->harga_sewa)" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Lokasi</label>
+                            <div class="m-b-15">
+                                <select class="js-example-basic-multiple" name="lokasi" required>
+                                    <option value="Jarak dari kost ke kampus cukup terjangkau dengan berjalan kaki">Jarak dari kost ke kampus cukup terjangkau dengan berjalan kaki</option>
+                                    <option value="Jarak dari kos ke kampus terjangkau dengan kendaraan umum/pribadi">Jarak dari kos ke kampus terjangkau dengan kendaraan umum/pribadi</option>
+                                    <option value="Kost dekat dengan akses yang diperlukan (warung makan,warnet, mini market, londry)">Kost dekat dengan akses yang diperlukan (warung makan,warnet, mini market, londry)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Kenyamanan</label>
+                            <div class="m-b-15">
+                                <select class="js-example-basic-multiple" name="kenyamanan" required>
+                                    <option value="Lingkungan kost tidak rawan banjir">Lingkungan kost tidak rawan banjir</option>
+                                    <option value="Lingkungan kost yang bersih">Lingkungan kost yang bersih</option>
+                                    <option value="Keramahan pemilik / penjaga kost">Keramahan pemilik / penjaga kost</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Keamanan</label>
+                            <div class="m-b-15">
+                                <select class="js-example-basic-multiple" name="keamanan" required>
+                                    <option value="Aman dari pencurian">Aman dari pencurian</option>
+                                    <option value="Keberadaan tuan ruan rumah / penjaga kost">Keberadaan tuan ruan rumah / penjaga kost</option>
+                                    <option value="Tempat kost ada jam malam">Tempat kost ada jam malam</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="">Luas Kamar (m<sup>2</sup>)</label>
+                            <input type="number" class="form-control m-b-15" name="panjangkamar" value="{{ $kost->panjangkamar }}" required>
+                        </div>
+                        <div class="col">
+                            <label for="">.</label>
+                            <input type="number" class="form-control m-b-15" name="lebarkamar" value="{{ $kost->lebarkamar }}" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Jarak dari Kampus (meter)</label>
+                            <input type="number" class="form-control m-b-15" name="jarak_dari_kampus" value="{{ $kost->jarak_dari_kampus }}" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Desain Rumah</label>
+                            <div class="m-b-15">
+                                <select class="js-example-basic-multiple" name="desain_rumah" required>
+                                    <option value="Permanen">Permanen</option>
+                                    <option value="Sekat gypsum">Sekat gypsum</option>
+                                    <option value="Sekat triplek">Sekat triplek</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Ubah</button>
-                </div>
+                <button type="submit" class="btn btn-warning btn-tone m-r-12" style="float: right">Update</button>
             </form>
         </div>
     </div>
+    <div class="card">
+
+    <!-- Content Wrapper END -->
+
 </div>
+<!-- Content Wrapper END -->
 <script type="text/javascript">
 
     var rupiah = document.getElementById('rupiah');
@@ -73,3 +138,4 @@
         return prefix == undefined ? rupiah : (rupiah ? 'Rp' + rupiah : '');
     }
 </script>
+@include('dashboard.layout.footer')
