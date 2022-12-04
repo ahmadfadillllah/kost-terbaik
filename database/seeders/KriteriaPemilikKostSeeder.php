@@ -17,13 +17,13 @@ class KriteriaPemilikKostSeeder extends Seeder
         KriteriaPemilikKost::insert([
             'id' => 1,
             'nama' => 'Luas Kamar',
-            'bobot' => 0.745,
+            'bobot' => 0.667,
         ]);
 
         KriteriaPemilikKost::insert([
             'id' => 2,
             'nama' => 'Jarak Dari Kampus',
-            'bobot' => 0.158,
+            'bobot' => 0.235,
         ]);
 
         KriteriaPemilikKost::insert([

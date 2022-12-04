@@ -97,41 +97,41 @@ class PerhitunganMahasiswaController extends Controller
             //Harga Sewa
 
             if ($ko->harga_sewa > 900000){
-                $ko->harga_sewa = 0.129;
+                $ko->harga_sewa = 0.137;
             }else if ($ko->harga_sewa >= 500000 and $ko->harga_sewa <= 900000){
-                $ko->harga_sewa = 0.277;
+                $ko->harga_sewa = 0.24;
             }else if ($ko->harga_sewa < 500000){
-                $ko->harga_sewa = 0.595;
+                $ko->harga_sewa = 0.623;
             }
             array_push($harga_sewa2, $ko->harga_sewa);
 
             //Lokasi
             if ($ko->lokasi == "Jarak dari kost ke kampus cukup terjangkau dengan berjalan kaki"){
-                $ko->lokasi = 0.648;
+                $ko->lokasi = 0.681;
             }else if ($ko->lokasi == "Jarak dari kos ke kampus terjangkau dengan kendaraan umum/pribadi"){
-                $ko->lokasi = 0.23;
+                $ko->lokasi = 0.201;
             }else if ($ko->lokasi == "Kost dekat dengan akses yang diperlukan (warung makan, warnet, mini market, londry)"){
-                $ko->lokasi = 0.122;
+                $ko->lokasi = 0.118;
             }
             array_push($lokasi2, $ko->lokasi);
 
             //Kenyamanan
             if ($ko->kenyamanan == "Lingkungan kost tidak rawan banjir"){
-                $ko->kenyamanan = 0.63;
+                $ko->kenyamanan = 0.595;
             }else if ($ko->kenyamanan == "Lingkungan kost yang bersih"){
-                $ko->kenyamanan = 0.242;
+                $ko->kenyamanan = 0.277;
             }else if ($ko->kenyamanan == "Keramahan pemilik / penjaga kost"){
-                $ko->kenyamanan = 0.139;
+                $ko->kenyamanan = 0.129;
             }
             array_push($kenyamanan2, $ko->kenyamanan);
 
             //Keamanan
             if ($ko->keamanan == "Aman dari pencurian"){
-                $ko->keamanan = 0.681;
+                $ko->keamanan = 0.633;
             }else if ($ko->keamanan == "Keberadaan tuan ruan rumah / penjaga kost"){
-                $ko->keamanan = 0.201;
+                $ko->keamanan = 0.26;
             }else if ($ko->keamanan == "Tempat kost ada jam malam"){
-                $ko->keamanan = 0.118;
+                $ko->keamanan = 0.106;
             }
             array_push($keamanan2, $ko->keamanan);
         }
@@ -149,10 +149,10 @@ class PerhitunganMahasiswaController extends Controller
         $kenyamanan_normalisasi,
         $keamanan_normalisasi
         ){
-            $hasil1 = $fasilitas_normalisasi * 0.316;
-            $hasil2 = $harga_sewa_normalisasi * 0.182;
-            $hasil3 = $lokasi_normalisasi * 0.103;
-            $hasil4 = $kenyamanan_normalisasi * 0.08;
+            $hasil1 = $fasilitas_normalisasi * 0.513;
+            $hasil2 = $harga_sewa_normalisasi * 0.197;
+            $hasil3 = $lokasi_normalisasi * 0.128;
+            $hasil4 = $kenyamanan_normalisasi * 0.087;
             $hasil5 = $keamanan_normalisasi * 0.063;
 
             return $hasil1 + $hasil2 + $hasil3 + $hasil4 + $hasil5;

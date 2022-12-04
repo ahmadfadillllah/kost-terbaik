@@ -17,25 +17,25 @@ class KriteriaMahasiswaSeeder extends Seeder
         KriteriaMahasiswa::insert([
             'id' => 1,
             'nama' => 'Fasilitas',
-            'bobot' => 0.316,
+            'bobot' => 0.513,
         ]);
 
         KriteriaMahasiswa::insert([
             'id' => 2,
             'nama' => 'Harga Sewa',
-            'bobot' => 0.182,
+            'bobot' => 0.197,
         ]);
 
         KriteriaMahasiswa::insert([
             'id' => 3,
             'nama' => 'Lokasi',
-            'bobot' => 0.103,
+            'bobot' => 0.128,
         ]);
 
         KriteriaMahasiswa::insert([
             'id' => 4,
             'nama' => 'Kenyamanan',
-            'bobot' => 0.08,
+            'bobot' => 0.087,
         ]);
 
         KriteriaMahasiswa::insert([

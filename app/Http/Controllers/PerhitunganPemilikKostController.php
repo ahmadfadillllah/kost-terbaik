@@ -59,31 +59,31 @@ class PerhitunganPemilikKostController extends Controller
         foreach($kost3 as $ko){
             //Luas Kamar
             if ($ko->panjangkamar == 4 and $ko->lebarkamar == 5){
-                $ko->luas_kamar = 0.619;
+                $ko->luas_kamar = 0.715;
             }else if ($ko->panjangkamar == 3 and $ko->lebarkamar == 4){
-                $ko->luas_kamar = 0.284;
+                $ko->luas_kamar = 0.187;
             }else if ($ko->panjangkamar == 3 and $ko->lebarkamar == 3){
-                $ko->luas_kamar = 0.096;
+                $ko->luas_kamar = 0.098;
             }
             array_push($luas_kamar2, $ko->luas_kamar);
 
             //Jarak Dari Kampus
             if ($ko->jarak_dari_kampus < 500){
-                $ko->jarak_dari_kampus = 0.64;
+                $ko->jarak_dari_kampus = 0.619;
             }else if ($ko->jarak_dari_kampus >= 500 and $ko->jarak_dari_kampus <= 1500){
-                $ko->jarak_dari_kampus = 0.206;
+                $ko->jarak_dari_kampus = 0.284;
             }else if ($ko->jarak_dari_kampus > 1500){
-                $ko->jarak_dari_kampus = 0.154;
+                $ko->jarak_dari_kampus = 0.096;
             }
             array_push($jarak_dari_kampus2, $ko->jarak_dari_kampus);
 
             //Desain Rumah
             if ($ko->desain_rumah == "Permanen"){
-                $ko->desain_rumah = 0.681;
+                $ko->desain_rumah = 0.648;
             }else if ($ko->desain_rumah == "Sekat Gypsum"){
-                $ko->desain_rumah = 0.201;
+                $ko->desain_rumah = 0.23;
             }else if ($ko->desain_rumah == "Sekat Triplek"){
-                $ko->desain_rumah = 0.118;
+                $ko->desain_rumah = 0.122;
             }
             array_push($desain_rumah2, $ko->desain_rumah);
         }
@@ -97,8 +97,8 @@ class PerhitunganPemilikKostController extends Controller
         $jarak_dari_kampus_normalisasi,
         $desain_rumah_normalisasi
         ){
-            $hasil1 = $luas_kamar_normalisasi * 0.745;
-            $hasil2 = $jarak_dari_kampus_normalisasi * 0.158;
+            $hasil1 = $luas_kamar_normalisasi * 0.667;
+            $hasil2 = $jarak_dari_kampus_normalisasi * 0.235;
             $hasil3 = $desain_rumah_normalisasi * 0.091;
 
             return $hasil1 + $hasil2 + $hasil3;
