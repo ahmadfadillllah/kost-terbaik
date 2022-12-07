@@ -47,9 +47,9 @@ class PerhitunganPemilikKostController extends Controller
             //Desain Rumah
             if ($ko->desain_rumah == "Permanen"){
                 $ko->desain_rumah = "Sangat Baik";
-            }else if ($ko->desain_rumah == "Sekat Gypsum"){
+            }else if ($ko->desain_rumah == "Sekat gypsum"){
                 $ko->desain_rumah = "Baik";
-            }else if ($ko->desain_rumah == "Sekat Triplek"){
+            }else if ($ko->desain_rumah == "Sekat triplek"){
                 $ko->desain_rumah = "Cukup";
             }
             array_push($desain_rumah, $ko->desain_rumah);
@@ -80,9 +80,9 @@ class PerhitunganPemilikKostController extends Controller
             //Desain Rumah
             if ($ko->desain_rumah == "Permanen"){
                 $ko->desain_rumah = 0.648;
-            }else if ($ko->desain_rumah == "Sekat Gypsum"){
+            }else if ($ko->desain_rumah == "Sekat gypsum"){
                 $ko->desain_rumah = 0.23;
-            }else if ($ko->desain_rumah == "Sekat Triplek"){
+            }else if ($ko->desain_rumah == "Sekat triplek"){
                 $ko->desain_rumah = 0.122;
             }
             array_push($desain_rumah2, $ko->desain_rumah);

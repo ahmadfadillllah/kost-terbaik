@@ -57,6 +57,8 @@
                 </table>
             </div>
         </div>
+        @if (Auth::user->role == 'admin')
         <button type="submit" class="btn btn-warning btn-tone m-r-12">Upload</button>
+        @endif
     </div>
 </form>
