@@ -26,6 +26,7 @@ class CreateKostTable extends Migration
             $table->integer('lebarkamar');
             $table->integer('jarak_dari_kampus');
             $table->string('desain_rumah');
+            $table->string('tipe_kost');
             $table->string('gambar');
             $table->timestamps();
 

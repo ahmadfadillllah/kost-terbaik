@@ -48,6 +48,7 @@ class DataKostController extends Controller
         $datakost->lebarkamar = $request->lebarkamar;
         $datakost->jarak_dari_kampus = $request->jarak_dari_kampus;
         $datakost->desain_rumah = $request->desain_rumah;
+        $datakost->tipe_kost = $request->tipe_kost;
         $date = date('Ymd His gis');
 
         if($request->hasFile('gambar')){
@@ -82,6 +83,7 @@ class DataKostController extends Controller
             'lebarkamar' => $request->lebarkamar,
             'jarak_dari_kampus' => $request->jarak_dari_kampus,
             'desain_rumah' => $request->desain_rumah,
+            'tipe_kost' => $request->tipe_kost,
         ]);
 
         if($datakost){

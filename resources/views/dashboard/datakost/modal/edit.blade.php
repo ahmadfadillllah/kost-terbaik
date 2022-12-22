@@ -51,6 +51,7 @@
                             <label for="">Lokasi</label>
                             <div class="m-b-15">
                                 <select class="js-example-basic-multiple" name="lokasi" required>
+                                    <option {{ $kost->lokasi == "Jarak dari kost ke kampus cukup terjangkau dengan berjalan kaki" ? "selected" : ""}} value="{{ $kost->lokasi }}">{{ $kost->lokasi }}</option>
                                     <option value="Jarak dari kost ke kampus cukup terjangkau dengan berjalan kaki">Jarak dari kost ke kampus cukup terjangkau dengan berjalan kaki</option>
                                     <option value="Jarak dari kos ke kampus terjangkau dengan kendaraan umum/pribadi">Jarak dari kos ke kampus terjangkau dengan kendaraan umum/pribadi</option>
                                     <option value="Kost dekat dengan akses yang diperlukan (warung makan,warnet, mini market, londry)">Kost dekat dengan akses yang diperlukan (warung makan,warnet, mini market, londry)</option>
@@ -61,6 +62,7 @@
                             <label for="">Kenyamanan</label>
                             <div class="m-b-15">
                                 <select class="js-example-basic-multiple" name="kenyamanan" required>
+                                    <option {{ $kost->kenyamanan == "Lingkungan kost tidak rawan banjir" ? "selected" : ""}} value="{{ $kost->kenyamanan }}">{{ $kost->kenyamanan }}</option>
                                     <option value="Lingkungan kost tidak rawan banjir">Lingkungan kost tidak rawan banjir</option>
                                     <option value="Lingkungan kost yang bersih">Lingkungan kost yang bersih</option>
                                     <option value="Keramahan pemilik / penjaga kost">Keramahan pemilik / penjaga kost</option>
@@ -71,6 +73,7 @@
                             <label for="">Keamanan</label>
                             <div class="m-b-15">
                                 <select class="js-example-basic-multiple" name="keamanan" required>
+                                    <option {{ $kost->keamanan == "Aman dari pencurian" ? "selected" : ""}} value="{{ $kost->keamanan }}">{{ $kost->keamanan }}</option>
                                     <option value="Aman dari pencurian">Aman dari pencurian</option>
                                     <option value="Keberadaan tuan ruan rumah / penjaga kost">Keberadaan tuan ruan rumah / penjaga kost</option>
                                     <option value="Tempat kost ada jam malam">Tempat kost ada jam malam</option>
@@ -93,9 +96,21 @@
                             <label for="">Desain Rumah</label>
                             <div class="m-b-15">
                                 <select class="js-example-basic-multiple" name="desain_rumah" required>
+                                    <option {{ $kost->desain_rumah == "Permanen" ? "selected" : ""}} value="{{ $kost->desain_rumah }}">{{ $kost->desain_rumah }}</option>
                                     <option value="Permanen">Permanen</option>
                                     <option value="Sekat gypsum">Sekat gypsum</option>
                                     <option value="Sekat triplek">Sekat triplek</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Tipe Kost</label>
+                            <div class="m-b-15">
+                                <select class="js-example-basic-multiple" name="tipe_kost" required>
+                                    <option {{ $kost->tipe_kost == "Exclusive" ? "selected" : ""}} value="{{ $kost->tipe_kost }}">{{ $kost->tipe_kost }}</option>
+                                    <option value="Exclusive">Exclusive</option>
+                                    <option value="Menengah">Menengah</option>
+                                    <option value="Standar">Standar</option>
                                 </select>
                             </div>
                         </div>

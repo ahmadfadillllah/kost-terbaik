@@ -176,11 +176,11 @@
 
                     <div class="col-lg-6 col-md-12">
                         <div class="about-content">
-                            <h3>Our Motive is to Provide Best for All and Fulfill their Desire</h3>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.</p>
+                            <h3>Motif Kami adalah Memberikan yang Terbaik untuk Semua dan Memenuhi Keinginan Mereka</h3>
+                            {{-- <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.</p> --}}
 
                             <div class="about-quote">
-                                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis. Proin gravida nibh vel velit auctor aliquet.</p>
+                                <p>Kami selalu ingin mengembangkan fitur web ini untuk bisa memberikan yang terbaik kepada Mahasiswa yang mencari kost terdekat</p>
                                 <span>Founder & CEO - <b>{{ config('app.name') }}</b></span>
                             </div>
                         </div>
@@ -205,7 +205,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-1.png" alt="image">
                             </div>
 
-                            <h3>No Revenue Loss</h3>
+                            <h3>Lokasi kost yang dekat</h3>
                         </div>
                     </div>
 
@@ -215,7 +215,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-2.png" alt="image">
                             </div>
 
-                            <h3>6 Month Free Service</h3>
+                            <h3>Aman dari Pencurian</h3>
                         </div>
                     </div>
 
@@ -225,7 +225,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-3.png" alt="image">
                             </div>
 
-                            <h3>24/7 Service</h3>
+                            <h3>Sekat Gypsum</h3>
                         </div>
                     </div>
 
@@ -235,7 +235,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-4.png" alt="image">
                             </div>
 
-                            <h3>Low Price</h3>
+                            <h3>Kost yang Bersih</h3>
                         </div>
                     </div>
 
@@ -245,7 +245,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-5.png" alt="image">
                             </div>
 
-                            <h3>Value Relationship</h3>
+                            <h3>Penjaga Kost</h3>
                         </div>
                     </div>
 
@@ -255,7 +255,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-6.png" alt="image">
                             </div>
 
-                            <h3>Easy Installment</h3>
+                            <h3>Harga sewa murah</h3>
                         </div>
                     </div>
                 </div>
@@ -264,7 +264,7 @@
         <!-- End Facilities Area -->
 
         <!-- Start Customers Area -->
-        <div class="customers-area ptb-100">
+        {{-- <div class="customers-area ptb-100">
             <div class="container">
                 <div class="section-title">
                     <h3>Review dari Mahasiswa</h3>
@@ -432,7 +432,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- End Customers Area -->
 
         <!-- Start Footer Area -->

@@ -121,21 +121,22 @@
         <!-- Start Main Slides With Featured Area -->
         <div class="main-slides-with-featured-area">
             <div class="home-slides-two owl-carousel owl-theme">
-                @foreach ($kost2 as $item)
+                @foreach ($data['kost'] as $item)
                 <div class="slides-item-box item-{{ $item->id }}">
                     <div class="container">
                         <div class="slides-content-box">
                             <div class="top-content">
                                 <ul class="tag-list">
-                                    <li class="featured"><a href="property-details.html">Featured</a></li>
+                                    <li class="featured"><a href="javascript:void(0);">Featured</a></li>
                                 </ul>
 
                                 {{-- <div class="price">@currency($item->harga_sewa)</div> --}}
                                 <span>{{ $item->keamanan }}</span>
                                 <h3>
-                                    <a href="property-details.html">{{ $item->nama_kost }}</a>
+                                    <a href="javascript:void(0);">{{ $item->nama_kost }}</a>
                                 </h3>
                                 <p>{{ $item->desain_rumah }}</p>
+                                <p>{{ $item->tipe_kost }}</p>
 
                                 <ul class="featured-list">
                                     <li><i class='bx bx-bed'></i>{{ implode(' . ', json_decode($item->fasilitas)) }}</li>
@@ -168,12 +169,12 @@
                 </div>
 
                 <div class="featured-slides owl-carousel owl-theme">
-                    @foreach ($kost as $k)
+                    @foreach ($data['kost'] as $k)
                     <div class="featured-item-box">
                         <div class="featured-image">
                             <a href="javascript:void(0);"><img src="{{ asset('admin/demo/app/images') }}/{{ $k->gambar }}" alt="image"></a>
 
-                           <div class="tag"><a href="javascript:void(0);">RECOMENDED</a></div>
+                           <div class="tag"><a href="javascript:void(0);">{{ $k->tipe_kost }}</a></div>
 
                             <div class="featured-top-content">
                                 <span>{{ $k->keamanan }}</span>
@@ -195,7 +196,7 @@
                                 <li><i class='bx bxs-star'></i></li>
                                 <li><i class='bx bxs-star'></i></li>
                                 <li class="color-gray"><i class='bx bxs-star'></i></li>
-                                <li>{{ $k->panjangkamar }} x {{ $k->lebarkamar }}</li>
+                                <li>{{ $k->panjangkamar }} x {{ $k->lebarkamar }}m<sup>2</sup></li>
                             </ul>
 
                             <div class="featured-btn">
@@ -224,7 +225,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-1.png" alt="image">
                             </div>
 
-                            <h3>No Revenue Loss</h3>
+                            <h3>Lokasi kost yang dekat</h3>
                         </div>
                     </div>
 
@@ -234,7 +235,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-2.png" alt="image">
                             </div>
 
-                            <h3>6 Month Free Service</h3>
+                            <h3>Aman dari Pencurian</h3>
                         </div>
                     </div>
 
@@ -244,7 +245,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-3.png" alt="image">
                             </div>
 
-                            <h3>24/7 Service</h3>
+                            <h3>Sekat Gypsum</h3>
                         </div>
                     </div>
 
@@ -254,7 +255,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-4.png" alt="image">
                             </div>
 
-                            <h3>Low Price</h3>
+                            <h3>Kost yang Bersih</h3>
                         </div>
                     </div>
 
@@ -264,7 +265,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-5.png" alt="image">
                             </div>
 
-                            <h3>Value Relationship</h3>
+                            <h3>Penjaga Kost</h3>
                         </div>
                     </div>
 
@@ -274,7 +275,7 @@
                                 <img src="{{ asset('default') }}/assets/images/facilities/facilities-6.png" alt="image">
                             </div>
 
-                            <h3>Easy Installment</h3>
+                            <h3>Harga sewa murah</h3>
                         </div>
                     </div>
                 </div>
@@ -283,7 +284,7 @@
         <!-- End Facilities Area -->
 
         <!-- Start Customers Area -->
-        <div class="customers-area ptb-100">
+        {{-- <div class="customers-area ptb-100">
             <div class="container">
                 <div class="section-title">
                     <h3>Review dari Mahasiswa</h3>
@@ -451,7 +452,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- End Customers Area -->
 
         <!-- Start Footer Area -->

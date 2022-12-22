@@ -106,6 +106,16 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <label for="">Tipe Kost</label>
+                            <div class="m-b-15">
+                                <select class="js-example-basic-multiple" name="tipe_kost" required>
+                                    <option value="Exclusive">Exclusive</option>
+                                    <option value="Menengah">Menengah</option>
+                                    <option value="Standar">Standar</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-tone m-r-12" style="float: right">Tambah</button>

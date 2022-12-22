@@ -18,14 +18,14 @@
                     <span class="title">Informasi Kost</span>
                 </a>
             </li>
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="{{ route('borda.index') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-form"></i>
                     </span>
                     <span class="title">Perhitungan Borda</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="{{ route('rekomendasikost.index') }}">
                     <span class="icon-holder">
@@ -34,11 +34,11 @@
                     <span class="title">Rekomendasi Kost</span>
                 </a>
             </li>
-            @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
+            @if (Auth::user()->role == 'admin')
             <hr>
             <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PK</h6>
             @endif
-            @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
+            @if (Auth::user()->role == 'admin')
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle" href="{{ route('kriteriapemilikkost.index') }}">
                         <span class="icon-holder">
@@ -56,11 +56,11 @@
                     </a>
                 </li>
             @endif
-            @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
+            @if (Auth::user()->role == 'admin')
             <hr>
             <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M</h6>
             @endif
-            @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
+            @if (Auth::user()->role == 'admin')
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle" href="{{ route('kriteriamahasiswa.index') }}">
                         <span class="icon-holder">

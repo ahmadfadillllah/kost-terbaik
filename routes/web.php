@@ -56,6 +56,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin,mahasiswa,pemilikkost']]
 
     //Rekomendasi Kost
     Route::get('/dashboard/rekomendasi-kost', [RekomendasiKostController::class, 'index'])->name('rekomendasikost.index');
+    Route::get('/dashboard/rekomendasi-kost/{id}', [RekomendasiKostController::class, 'show'])->name('rekomendasikost.show');
 
     // Kriteria Mahasiswa
     Route::get('/dashboard/kriteria-mahasiswa', [KriteriaMahasiswaController::class, 'index'])->name('kriteriamahasiswa.index');
