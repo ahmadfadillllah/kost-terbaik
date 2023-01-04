@@ -1,6 +1,7 @@
 <div class="col-md-4 col-lg-6">
     <div class="card">
         <div class="card-body">
+            <p style="float: right">Bobot: 0.513</p>
             <h4>Fasilitas</h4>
             <div class="m-t-25">
                 <div class="table-responsive">
@@ -35,6 +36,7 @@
 <div class="col-md-4 col-lg-6">
     <div class="card">
         <div class="card-body">
+            <p style="float: right">Bobot: 0.197</p>
             <h4>Harga Sewa</h4>
             <div class="m-t-25">
                 <div class="table-responsive">
@@ -69,6 +71,7 @@
 <div class="col-md-4 col-lg-6">
     <div class="card">
         <div class="card-body">
+            <p style="float: right">Bobot: 0.128</p>
             <h4>Lokasi</h4>
             <div class="m-t-25">
                 <div class="table-responsive">
@@ -103,6 +106,7 @@
 <div class="col-md-4 col-lg-6">
     <div class="card">
         <div class="card-body">
+            <p style="float: right">Bobot: 0.087</p>
             <h4>Kenyamanan</h4>
             <div class="m-t-25">
                 <div class="table-responsive">
@@ -137,6 +141,7 @@
 <div class="col-md-4 col-lg-6">
     <div class="card">
         <div class="card-body">
+            <p style="float: right">Bobot: 0.059</p>
             <h4>Keamanan</h4>
             <div class="m-t-25">
                 <div class="table-responsive">

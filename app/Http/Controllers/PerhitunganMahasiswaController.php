@@ -153,7 +153,7 @@ class PerhitunganMahasiswaController extends Controller
             $hasil2 = $harga_sewa_normalisasi * 0.197;
             $hasil3 = $lokasi_normalisasi * 0.128;
             $hasil4 = $kenyamanan_normalisasi * 0.087;
-            $hasil5 = $keamanan_normalisasi * 0.063;
+            $hasil5 = $keamanan_normalisasi * 0.059;
 
             return $hasil1 + $hasil2 + $hasil3 + $hasil4 + $hasil5;
         },

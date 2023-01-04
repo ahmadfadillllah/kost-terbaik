@@ -34,9 +34,9 @@
                     <span class="title">Rekomendasi Kost</span>
                 </a>
             </li>
-            @if (Auth::user()->role == 'admin')
+            {{-- @if (Auth::user()->role == 'admin') --}}
             <hr>
-            <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PK</h6>
+            {{-- <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PK</h6>
             @endif
             @if (Auth::user()->role == 'admin')
                 <li class="nav-item dropdown">
@@ -55,10 +55,10 @@
                         <span class="title">Perhitungan</span>
                     </a>
                 </li>
-            @endif
+            @endif --}}
             @if (Auth::user()->role == 'admin')
-            <hr>
-            <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M</h6>
+            {{-- <hr> --}}
+            {{-- <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M</h6> --}}
             @endif
             @if (Auth::user()->role == 'admin')
                 <li class="nav-item dropdown">
