@@ -12,9 +12,6 @@
                         <th>Lokasi</th>
                         <th>Kenyamanan</th>
                         <th>Keamanan</th>
-                        <th>Luas Kamar</th>
-                        <th>Jarak Dari Kampus</th>
-                        <th>Desain Rumah</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,9 +23,6 @@
                             <td>{{ $k->lokasi }}</td>
                             <td>{{ $k->kenyamanan }}</td>
                             <td>{{ $k->keamanan }}</td>
-                            <td>{{ $k->panjangkamar }}x{{ $k->lebarkamar }}</td>
-                            <td>{{ $k->jarak_dari_kampus }}</td>
-                            <td>{{ $k->desain_rumah }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -40,9 +34,6 @@
                         <th>Lokasi</th>
                         <th>Kenyamanan</th>
                         <th>Keamanan</th>
-                        <th>Luas Kamar</th>
-                        <th>Jarak Dari Kampus</th>
-                        <th>Desain Rumah</th>
                     </tr>
                 </tfoot>
             </table>
@@ -65,9 +56,6 @@
                         <th>Lokasi</th>
                         <th>Kenyamanan</th>
                         <th>Keamanan</th>
-                        <th>Luas Kamar</th>
-                        <th>Jarak Dari Kampus</th>
-                        <th>Desain Rumah</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,9 +67,6 @@
                             <td>{{ $k->lokasi }}</td>
                             <td>{{ $k->kenyamanan }}</td>
                             <td>{{ $k->keamanan }}</td>
-                            <td>{{ $k->luas_kamar }}</td>
-                            <td>{{ $k->jarak_dari_kampus }}</td>
-                            <td>{{ $k->desain_rumah }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -93,9 +78,6 @@
                         <th>Lokasi</th>
                         <th>Kenyamanan</th>
                         <th>Keamanan</th>
-                        <th>Luas Kamar</th>
-                        <th>Jarak Dari Kampus</th>
-                        <th>Desain Rumah</th>
                     </tr>
                 </tfoot>
             </table>
@@ -117,9 +99,6 @@
                         <th>Lokasi</th>
                         <th>Kenyamanan</th>
                         <th>Keamanan</th>
-                        <th>Luas Kamar</th>
-                        <th>Jarak Dari Kampus</th>
-                        <th>Desain Rumah</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -133,9 +112,6 @@
                             <td>{{ $data['n_lokasi'][$key] }}</td>
                             <td>{{ $data['n_kenyamanan'][$key] }}</td>
                             <td>{{ $data['n_keamanan'][$key] }}</td>
-                            <td>{{ $data['n_luas_kamar'][$key] }}</td>
-                            <td>{{ $data['n_jarak_dari_kampus'][$key] }}</td>
-                            <td>{{ $data['n_desain_rumah'][$key] }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -147,9 +123,6 @@
                         <th>Lokasi</th>
                         <th>Kenyamanan</th>
                         <th>Keamanan</th>
-                        <th>Luas Kamar</th>
-                        <th>Jarak Dari Kampus</th>
-                        <th>Desain Rumah</th>
                     </tr>
                 </tfoot>
             </table>

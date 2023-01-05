@@ -33,9 +33,6 @@
                         <span class="badge badge-pill badge-orange">Lokasi: {{ $dk->lokasi }}</span>
                         <span class="badge badge-pill badge-gold">Kenyamanan: {{ $dk->kenyamanan }}</span>
                         <span class="badge badge-pill badge-lime">Keamanan: {{ $dk->keamanan }}</span>
-                        <span class="badge badge-pill badge-green">Luas Kamar: {{ $dk->panjangkamar }} x {{ $dk->lebarkamar }} m<sup>2</sup></span>
-                        <span class="badge badge-pill badge-cyan">Jarak dari Kampus: {{ $dk->jarak_dari_kampus }} meter</span>
-                        <span class="badge badge-pill badge-blue">Desain Rumah: {{ $dk->desain_rumah }}</span>
                         @if (Auth::user()->role == 'admin' or Auth::user()->role == 'pemilikkost')
                         <div class="m-t-20">
                             <a href="{{ route('datakost.edit', $dk->id) }}" class="btn btn-warning">Ubah</a>

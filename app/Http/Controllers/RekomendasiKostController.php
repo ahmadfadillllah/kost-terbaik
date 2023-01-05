@@ -20,18 +20,12 @@ class RekomendasiKostController extends Controller
         $lokasi = array();
         $kenyamanan = array();
         $keamanan = array();
-        $luas_kamar = array();
-        $jarak_dari_kampus = array();
-        $desain_rumah = array();
 
         $fasilitas2 = array();
         $harga_sewa2 = array();
         $lokasi2 = array();
         $kenyamanan2 = array();
         $keamanan2 = array();
-        $luas_kamar2 = array();
-        $jarak_dari_kampus2 = array();
-        $desain_rumah2 = array();
 
         foreach($kost2 as $ko){
             //Fasilitas
@@ -85,36 +79,6 @@ class RekomendasiKostController extends Controller
                 $ko->keamanan = "Cukup";
             }
             array_push($keamanan, $ko->keamanan);
-
-            //Luas Kamar
-            if ($ko->panjangkamar == 4 and $ko->lebarkamar == 5){
-                $ko->luas_kamar = "Sangat Baik";
-            }else if ($ko->panjangkamar == 3 and $ko->lebarkamar == 4){
-                $ko->luas_kamar = "Baik";
-            }else if ($ko->panjangkamar == 3 and $ko->lebarkamar == 3){
-                $ko->luas_kamar = "Cukup";
-            }
-            array_push($luas_kamar, $ko->luas_kamar);
-
-            //Jarak Dari Kampus
-            if ($ko->jarak_dari_kampus < 500){
-                $ko->jarak_dari_kampus = "Sangat Baik";
-            }else if ($ko->jarak_dari_kampus >= 500 and $ko->jarak_dari_kampus <= 1500){
-                $ko->jarak_dari_kampus = "Baik";
-            }else if ($ko->jarak_dari_kampus > 1500){
-                $ko->jarak_dari_kampus = "Cukup";
-            }
-            array_push($jarak_dari_kampus, $ko->jarak_dari_kampus);
-
-            //Desain Rumah
-            if ($ko->desain_rumah == "Permanen"){
-                $ko->desain_rumah = "Sangat Baik";
-            }else if ($ko->desain_rumah == "Sekat gypsum"){
-                $ko->desain_rumah = "Baik";
-            }else if ($ko->desain_rumah == "Sekat triplek"){
-                $ko->desain_rumah = "Cukup";
-            }
-            array_push($desain_rumah, $ko->desain_rumah);
         }
 
 
@@ -171,35 +135,6 @@ class RekomendasiKostController extends Controller
             }
             array_push($keamanan2, $ko->keamanan);
 
-            //Luas Kamar
-            if ($ko->panjangkamar == 4 and $ko->lebarkamar == 5){
-                $ko->luas_kamar = 0.715;
-            }else if ($ko->panjangkamar == 3 and $ko->lebarkamar == 4){
-                $ko->luas_kamar = 0.187;
-            }else if ($ko->panjangkamar == 3 and $ko->lebarkamar == 3){
-                $ko->luas_kamar = 0.098;
-            }
-            array_push($luas_kamar2, $ko->luas_kamar);
-
-            //Jarak Dari Kampus
-            if ($ko->jarak_dari_kampus < 500){
-                $ko->jarak_dari_kampus = 0.619;
-            }else if ($ko->jarak_dari_kampus >= 500 and $ko->jarak_dari_kampus <= 1500){
-                $ko->jarak_dari_kampus = 0.284;
-            }else if ($ko->jarak_dari_kampus > 1500){
-                $ko->jarak_dari_kampus = 0.096;
-            }
-            array_push($jarak_dari_kampus2, $ko->jarak_dari_kampus);
-
-            //Desain Rumah
-            if ($ko->desain_rumah == "Permanen"){
-                $ko->desain_rumah = 0.648;
-            }else if ($ko->desain_rumah == "Sekat gypsum"){
-                $ko->desain_rumah = 0.23;
-            }else if ($ko->desain_rumah == "Sekat triplek"){
-                $ko->desain_rumah = 0.122;
-            }
-            array_push($desain_rumah2, $ko->desain_rumah);
         }
 
 
@@ -208,38 +143,26 @@ class RekomendasiKostController extends Controller
         $n_lokasi = array();
         $n_kenyamanan = array();
         $n_keamanan = array();
-        $n_luas_kamar = array();
-        $n_jarak_dari_kampus = array();
-        $n_desain_rumah = array();
 
         $map1 = array_map(function ($fasilitas_normalisasi,
         $harga_sewa_normalisasi,
         $lokasi_normalisasi,
         $kenyamanan_normalisasi,
-        $keamanan_normalisasi,
-        $luas_kamar_normalisasi,
-        $jarak_dari_kampus_normalisasi,
-        $desain_rumah_normalisasi
+        $keamanan_normalisasi
         ){
             $hasil1 = $fasilitas_normalisasi * 0.513;
             $hasil2 = $harga_sewa_normalisasi * 0.197;
             $hasil3 = $lokasi_normalisasi * 0.128;
             $hasil4 = $kenyamanan_normalisasi * 0.087;
             $hasil5 = $keamanan_normalisasi * 0.063;
-            $hasil6 = $luas_kamar_normalisasi * 0.667;
-            $hasil7 = $jarak_dari_kampus_normalisasi * 0.235;
-            $hasil8 = $desain_rumah_normalisasi * 0.091;
 
-            return $hasil1 + $hasil2 + $hasil3 + $hasil4 + $hasil5 + $hasil6 + $hasil7 + $hasil8;
+            return $hasil1 + $hasil2 + $hasil3 + $hasil4 + $hasil5;
         },
         $fasilitas2, $n_fasilitas,
         $harga_sewa2, $n_harga_sewa,
         $lokasi2, $n_lokasi,
         $kenyamanan2, $n_kenyamanan,
-        $keamanan2, $n_keamanan,
-        $luas_kamar2, $n_luas_kamar,
-        $jarak_dari_kampus2, $n_jarak_dari_kampus,
-        $desain_rumah2, $n_desain_rumah);
+        $keamanan2, $n_keamanan);
 
         $total = collect($map1)->sortDesc()->values()->all();
 
@@ -253,9 +176,6 @@ class RekomendasiKostController extends Controller
             'n_lokasi' => $lokasi2,
             'n_kenyamanan' => $kenyamanan2,
             'n_keamanan' => $keamanan2,
-            'n_luas_kamar' => $luas_kamar2,
-            'n_jarak_dari_kampus' => $jarak_dari_kampus2,
-            'n_desain_rumah' => $desain_rumah2,
             'total' => $total,
         ];
 

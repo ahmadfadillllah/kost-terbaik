@@ -229,11 +229,11 @@ class HomeController extends Controller
             $hasil3 = $lokasi_normalisasi * 0.128;
             $hasil4 = $kenyamanan_normalisasi * 0.087;
             $hasil5 = $keamanan_normalisasi * 0.063;
-            $hasil6 = $luas_kamar_normalisasi * 0.667;
-            $hasil7 = $jarak_dari_kampus_normalisasi * 0.235;
-            $hasil8 = $desain_rumah_normalisasi * 0.091;
+            // $hasil6 = $luas_kamar_normalisasi * 0.667;
+            // $hasil7 = $jarak_dari_kampus_normalisasi * 0.235;
+            // $hasil8 = $desain_rumah_normalisasi * 0.091;
 
-            return $hasil1 + $hasil2 + $hasil3 + $hasil4 + $hasil5 + $hasil6 + $hasil7 + $hasil8;
+            return $hasil1 + $hasil2 + $hasil3 + $hasil4 + $hasil5;
         },
         $fasilitas2, $n_fasilitas,
         $harga_sewa2, $n_harga_sewa,
