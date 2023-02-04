@@ -1,7 +1,7 @@
 <div class="col-md-4 col-lg-6">
     <div class="card">
         <div class="card-body">
-            <p style="float: right">Bobot: 0.513</p>
+            <p style="float: right">Bobot: 0.519</p>
             <h4>Fasilitas</h4>
             <div class="m-t-25">
                 <div class="table-responsive">
