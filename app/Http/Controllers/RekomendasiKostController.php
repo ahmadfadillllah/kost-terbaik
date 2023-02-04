@@ -150,7 +150,7 @@ class RekomendasiKostController extends Controller
         $kenyamanan_normalisasi,
         $keamanan_normalisasi
         ){
-            $hasil1 = $fasilitas_normalisasi * 0.513;
+            $hasil1 = $fasilitas_normalisasi * 0.519;
             $hasil2 = $harga_sewa_normalisasi * 0.197;
             $hasil3 = $lokasi_normalisasi * 0.128;
             $hasil4 = $kenyamanan_normalisasi * 0.087;

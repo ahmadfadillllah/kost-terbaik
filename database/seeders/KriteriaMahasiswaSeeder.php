@@ -17,7 +17,7 @@ class KriteriaMahasiswaSeeder extends Seeder
         KriteriaMahasiswa::insert([
             'id' => 1,
             'nama' => 'Fasilitas',
-            'bobot' => 0.513,
+            'bobot' => 0.519,
         ]);
 
         KriteriaMahasiswa::insert([
