@@ -215,20 +215,23 @@ class HomeController extends Controller
         $n_jarak_dari_kampus = array();
         $n_desain_rumah = array();
 
-        $map1 = array_map(function ($fasilitas_normalisasi,
-        $harga_sewa_normalisasi,
-        $lokasi_normalisasi,
-        $kenyamanan_normalisasi,
-        $keamanan_normalisasi,
-        $luas_kamar_normalisasi,
-        $jarak_dari_kampus_normalisasi,
-        $desain_rumah_normalisasi
+        $map1 = array_map(function ($single_fasilitas,
+        $single_fasilitas_normalisasi,
+        $single_harga_sewa,
+        $single_harga_sewa_normalisasi,
+        $single_lokasi,
+        $single_lokasi_normalisasi,
+        $single_kenyamanan,
+        $single_kenyamanan_normalisasi,
+        $single_keamanan,
+        $single_keamanan_normalisasi
+
         ){
-            $hasil1 = $fasilitas_normalisasi * 0.519;
-            $hasil2 = $harga_sewa_normalisasi * 0.197;
-            $hasil3 = $lokasi_normalisasi * 0.128;
-            $hasil4 = $kenyamanan_normalisasi * 0.087;
-            $hasil5 = $keamanan_normalisasi * 0.063;
+            $hasil1 = $single_fasilitas * 0.519;
+            $hasil2 = $single_harga_sewa * 0.197;
+            $hasil3 = $single_lokasi * 0.128;
+            $hasil4 = $single_kenyamanan * 0.087;
+            $hasil5 = $single_keamanan * 0.059;
             // $hasil6 = $luas_kamar_normalisasi * 0.667;
             // $hasil7 = $jarak_dari_kampus_normalisasi * 0.235;
             // $hasil8 = $desain_rumah_normalisasi * 0.091;

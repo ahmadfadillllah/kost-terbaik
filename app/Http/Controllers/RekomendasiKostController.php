@@ -144,17 +144,23 @@ class RekomendasiKostController extends Controller
         $n_kenyamanan = array();
         $n_keamanan = array();
 
-        $map1 = array_map(function ($fasilitas_normalisasi,
-        $harga_sewa_normalisasi,
-        $lokasi_normalisasi,
-        $kenyamanan_normalisasi,
-        $keamanan_normalisasi
+        $map1 = array_map(function ($single_fasilitas,
+        $single_fasilitas_normalisasi,
+        $single_harga_sewa,
+        $single_harga_sewa_normalisasi,
+        $single_lokasi,
+        $single_lokasi_normalisasi,
+        $single_kenyamanan,
+        $single_kenyamanan_normalisasi,
+        $single_keamanan,
+        $single_keamanan_normalisasi
+
         ){
-            $hasil1 = $fasilitas_normalisasi * 0.519;
-            $hasil2 = $harga_sewa_normalisasi * 0.197;
-            $hasil3 = $lokasi_normalisasi * 0.128;
-            $hasil4 = $kenyamanan_normalisasi * 0.087;
-            $hasil5 = $keamanan_normalisasi * 0.063;
+            $hasil1 = $single_fasilitas * 0.519;
+            $hasil2 = $single_harga_sewa * 0.197;
+            $hasil3 = $single_lokasi * 0.128;
+            $hasil4 = $single_kenyamanan * 0.087;
+            $hasil5 = $single_keamanan * 0.059;
 
             return $hasil1 + $hasil2 + $hasil3 + $hasil4 + $hasil5;
         },
